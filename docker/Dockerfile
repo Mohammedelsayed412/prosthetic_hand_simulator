@@ -1,4 +1,4 @@
-FROM gazebo:libgazebo9-bionic
+FROM osrf/ros:melodic-desktop-full-bionic
 
 # install packages
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
