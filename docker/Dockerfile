@@ -21,7 +21,7 @@ RUN bash nodesource_setup.sh
 RUN apt install -y nodejs
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
-    libgazebo9-dev=9.13.0-1* \
+    libgazebo9-dev \
     && rm -rf /var/lib/apt/lists/*
     
 
