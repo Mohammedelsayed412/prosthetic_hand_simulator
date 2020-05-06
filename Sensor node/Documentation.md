@@ -14,7 +14,7 @@ Here, we will use a distorted_camera model as a sensor node.
 
 * Create a model sdf file
   
-  $ gedit ~/.gazebo/models/distorted_camera/model.sdf
+  $ gedit ~/.gazebo/models/distorted_camera/Camer_model.sdf
 
 You can Create the config file and sdf file manually or from terminal too.
 
@@ -120,4 +120,4 @@ the visual element descride the shape of the element and it is an optional tag.
 here, we descripte the specs of the used sensor and it will be different from sensor to other aslo, we can change the values of these coefficients as we desire.
 the distored camera has 5 distortion coefficient k1, k2, k3, p1, p2. The coeffs k describe the radial components and the coeffs p describe the tangential component,to change the distortion we can change these values.
 
-2) Using the camera node as a publisher
+## 2) Using the camera node as a publisher
