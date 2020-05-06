@@ -2,7 +2,7 @@
 
 Here, we will use a distorted_camera model as a sensor node.
 
-## 1) Create Camera node
+## 1) Create Camera node 
 
 * Create a model directory 
   
@@ -115,6 +115,22 @@ the visual element descride the shape of the element and it is an optional tag.
       </sensor>
 ```
 here, we descripte the specs of the used sensor and it will be different from sensor to other aslo, we can change the values of these coefficients as we desire.
-the distored camera has 5 distortion coefficient k1, k2, k3, p1, p2. The coeffs k describe the radial components and the coeffs p describe the tangential component,to change the distortion we can change these values.
+The distored camera has 5 distortion coefficient k1, k2, k3, p1, p2. The coeffs k describe the radial components and the coeffs p describe the tangential component,to change the distortion we can change these values.
 
-## 2) Using the camera node as a publisher
+## Connect Gazebo with ROS
+
+* install gazebo_ros_pkgs
+`$ sudo apt-get install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control`
+
+* Launch empty world from ros
+  `$ roslaunch gazebo_ros empty_world.launch`
+
+* Spawn the model in Simulation 
+  `$ rosrun gazebo_ros spawn_model -file <file_path> -sdf -model <model_name>`
+
+  now the distorted camera sensor is be shown in the simulation to check that everything working well
+   `$ rosrun rqt_graph rqt_graph`
+
+## 2) Writing a publisher node
+
+  
