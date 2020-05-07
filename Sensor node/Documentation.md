@@ -1,8 +1,8 @@
-# Create a sensor node as a publisher
+# Creating a sensor node as a publisher
 
-Here, we will use a distorted_camera model as a sensor node.
+## USing Distorted_Camera Sensor
 
-## 1) Create Camera node 
+### Creating camera model in Gazebo 
 
 * Create a model directory 
   
@@ -16,7 +16,7 @@ Here, we will use a distorted_camera model as a sensor node.
   
   `$ gedit ~/.gazebo/models/distorted_camera/Camer_model.sdf`
 
-You can Create the config file and sdf file manually or from terminal too.
+You can create the config file and sdf file manually or from the terminal by `sudo nano file_name.sdf`.
 
 * Start Gazebo
   
@@ -24,17 +24,17 @@ You can Create the config file and sdf file manually or from terminal too.
 
 * Insert the distorted camera model into the scene 
   
-   * select insert from gazebo left bar 
-   * choice Distorted Camera
+   * Select **insert** from the left bar in gazebo 
+   * Select **Distorted Camera**
 
 * Show the camera image 
 
-   * Drop obj on the camera FOV
-   * Press Ctrl-T 
+   * Drop any obj in front of the camera FOV
+   * Press **Ctrl-T** 
    * from "gazebo.msgs.ImageStamped" the topic name will be shown 
-   * Click on the topic name then click "Ok" you will see the camera image data.
+   * Click on the topic name then click **"Ok"** you will see the camera image data.
 
-## Break the code down (Camera_model.sdf)
+### Breaking the code down (Camera_model.sdf)
 
 The link tag contains 4 main tags (interia, collision, visual, sensor)
 
@@ -52,7 +52,7 @@ The link tag contains 4 main tags (interia, collision, visual, sensor)
 
 ```
 
-the interia element describes the mass and the rotational interia matrix we can change these value as our design need.
+The interia element describes the mass and the rotational inertia matrix, you can change these values as your design need.
 
 **Collision**
 
@@ -66,7 +66,7 @@ the interia element describes the mass and the rotational interia matrix we can 
       </collision>
 ```
 
-the collision element encapsulates a geometry which is used for collsion checking. Here, it is a simple box and it can be changed as we desire.
+The collision element encapsulates a geometry which is used for collision checking. Here, it is a simple box and it can be any other shape.
 
 **Visual**
 
@@ -80,7 +80,7 @@ the collision element encapsulates a geometry which is used for collsion checkin
       </visual>
 ```
 
-the visual element descride the shape of the element and it is an optional tag.
+The visual tag descride the visual elements which describe the shape of the model.
 
 **Sensor**
 
@@ -106,31 +106,45 @@ the visual element descride the shape of the element and it is an optional tag.
           </distortion>
         </camera>
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">>
-        <imageTopicName>camera_img</imageTopicName>
-        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <always_on>1</always_on>
-        <update_rate>30</update_rate>
-        <visualize>true</visualize>
-        </plugin>
+          <imageTopicName>camera_img</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>true</visualize>
+          </plugin>
       </sensor>
 ```
-here, we descripte the specs of the used sensor and it will be different from sensor to other aslo, we can change the values of these coefficients as we desire.
-The distored camera has 5 distortion coefficient k1, k2, k3, p1, p2. The coeffs k describe the radial components and the coeffs p describe the tangential component,to change the distortion we can change these values.
+Here, we describe the specifications of the distorted_camera sensor and it differs from sensor to another aslo, you can change the values of these coefficients as you desire.
+The distored camera has 5 distortion coefficient k1, k2, k3, p1, p2. The coeffs k describe the radial components and the coeffs p describe the tangential component,to change the distortion of the image you can change these values.
+The camera ROS plugin provides the ROS interface for simulating cameras,The ROS camera plugin is `libgazebo_ros_camera.so`. Each sensor has each own plugin.
 
-## Connect Gazebo with ROS
+### Connecting Gazebo with ROS
 
 * install gazebo_ros_pkgs
+  
 `$ sudo apt-get install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control`
 
-* Launch empty world from ros
+* Launch empty world on Gazebo from ros
+  
   `$ roslaunch gazebo_ros empty_world.launch`
 
-* Spawn the model in Simulation 
+* Spawn the model in the simulation 
+  
   `$ rosrun gazebo_ros spawn_model -file <file_path> -sdf -model <model_name>`
 
-  now the distorted camera sensor is be shown in the simulation to check that everything working well
-   `$ rosrun rqt_graph rqt_graph`
+  now the distorted camera sensor appears in the simulation. 
+  **To check that everything is working well**
 
-## 2) Writing a publisher node
+  `$ sudo apt-get install ros-melodic-rqt` 
+  `$ sudo apt-get install ros-meodic-rqt-common-plugins`
+  `$ rosrun rqt_graph rqt_graph`
+
+* Show the published data on your topic
+  
+  `$ rostopic echo [topic]` replace [topic] with the topic name
+ 
+
+
+
 
   
