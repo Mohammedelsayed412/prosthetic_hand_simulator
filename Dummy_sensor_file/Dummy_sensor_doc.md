@@ -34,7 +34,7 @@
 
   <img src="sdf.png">
 
-  [reference]((https://wiki.ros.org/urdf/XML/link))
+  refence https://wiki.ros.org/urdf/XML/link
 
 
 * Sensor and plugin  descriptions.
