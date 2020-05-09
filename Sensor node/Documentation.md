@@ -128,6 +128,8 @@ The camera ROS plugin provides the ROS interface for simulating cameras,The ROS 
   
   `$ roslaunch gazebo_ros empty_world.launch`
 
+  make sure that roscore is running.
+
 * Spawn the model in the simulation 
   
   `$ rosrun gazebo_ros spawn_model -file <file_path> -sdf -model <model_name>`
