@@ -1,11 +1,12 @@
 # Run launch file
 
 ```
-cd sim_env_ws/src
+cd sim_env_ws
 soucre devel/setup.sh
-roslaunch prosthetic_gazebo tables_world.launch
+roslaunch prosthetic_gazebo sim_env.launch
 
 ```
+* **Image of what appears**:  [Image](images/sim_env.png)
 
 # roslaunch command
 
