@@ -1,11 +1,13 @@
 # Run commands
 
-`
-cd sim_env_ws
-catkin_make
-source devel/setup.sh
-chmod +x src/prosthetic_gazebo/scripts/subscriber_image.py
-`
+
+`cd sim_env_ws`
+
+`catkin_make`
+
+`source devel/setup.sh`
+
+`chmod +x src/prosthetic_gazebo/scripts/subscriber_image.py`
 
 ## Run launch file
 
@@ -17,8 +19,9 @@ roslaunch prosthetic_gazebo sim_env.launch
 
 ```
 rosrun gazebo_ros spawn_model -file `echo $(rospack find prosthetic_gazebo)`/models/kinect/model.sdf -sdf -model kinect -y 0 -x -0.5 -z 0.913
-rosrun prosthetic_gazebo subscriber_image.py
 ```
+
+`rosrun prosthetic_gazebo subscriber_image.py`
 
 
 ## Spawn camera

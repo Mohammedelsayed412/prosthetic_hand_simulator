@@ -6,7 +6,7 @@ source devel/setup.sh
 roslaunch prosthetic_gazebo sim_env.launch
 
 ```
-* **Image of what appears**:  [Image](images/sim_env.png)
+* **Image of what appears**:  [Image](sim_env.png)
 
 # roslaunch command
 
