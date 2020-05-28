@@ -18,7 +18,8 @@
     * running an empty world:
     ```roslaunch gazebo_ros empty_world.launch```
     * or running any other world:
-        * ```cd sim_env_ws/src
+        * ```
+           cd sim_env_ws/src
            source devel/setup.sh
            roslaunch prosthetic_gazebo tables_world.launch
           ```
