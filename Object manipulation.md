@@ -2,7 +2,8 @@
 
 ```roslaunch gazebo_ros empty_world.launch```
 * In another terminal:
-```rosrun gazebo_ros spawn_model -database cafe_table -sdf -model cafe_table -y 0 -x -0
+```
+   rosrun gazebo_ros spawn_model -database cafe_table -sdf -model cafe_table -y 0 -x -0
    rosrun gazebo_ros spawn_model -database coke_can -sdf -model coke_can -reference_frame cafe_table::link -y 0 -x 0 -z 0.913
    rosrun gazebo_ros spawn_model -database bowl -sdf -model bowl -reference_frame cafe_table::link -y 0 -x 0.2 -z 0.913
    rosrun gazebo_ros spawn_model -database cricket_ball -sdf -model cricket_ball -reference_frame cafe_table::link -y 0 -x -0.1 -z 0.913
