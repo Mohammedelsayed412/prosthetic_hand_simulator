@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ceslab/sim_env_ws/devel/setup.sh

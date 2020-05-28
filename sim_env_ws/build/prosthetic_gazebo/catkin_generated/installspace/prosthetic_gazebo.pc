@@ -1,0 +1,8 @@
+prefix=/home/ceslab/sim_env_ws/install
+
+Name: prosthetic_gazebo
+Description: Description of prosthetic_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
