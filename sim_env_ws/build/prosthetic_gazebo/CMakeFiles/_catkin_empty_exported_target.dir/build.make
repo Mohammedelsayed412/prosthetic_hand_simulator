@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ceslab/sim_env_ws/src
+CMAKE_SOURCE_DIR = /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ceslab/sim_env_ws/build
+CMAKE_BINARY_DIR = /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ prosthetic_gazebo/CMakeFiles/_catkin_empty_exported_target.dir/build: _catkin_em
 .PHONY : prosthetic_gazebo/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 prosthetic_gazebo/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/ceslab/sim_env_ws/build/prosthetic_gazebo && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/prosthetic_gazebo && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : prosthetic_gazebo/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 prosthetic_gazebo/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/ceslab/sim_env_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ceslab/sim_env_ws/src /home/ceslab/sim_env_ws/src/prosthetic_gazebo /home/ceslab/sim_env_ws/build /home/ceslab/sim_env_ws/build/prosthetic_gazebo /home/ceslab/sim_env_ws/build/prosthetic_gazebo/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/prosthetic_gazebo /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/prosthetic_gazebo /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/prosthetic_gazebo/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : prosthetic_gazebo/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

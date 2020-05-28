@@ -1,4 +1,4 @@
-prefix=/home/ceslab/sim_env_ws/install
+prefix=/home/ceslab/prosthetic_hand_simulator/sim_env_ws/install
 
 Name: prosthetic_gazebo
 Description: Description of prosthetic_gazebo

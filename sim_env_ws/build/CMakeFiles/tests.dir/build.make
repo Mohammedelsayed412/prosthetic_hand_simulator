@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ceslab/sim_env_ws/src
+CMAKE_SOURCE_DIR = /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ceslab/sim_env_ws/build
+CMAKE_BINARY_DIR = /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/ceslab/sim_env_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ceslab/sim_env_ws/src /home/ceslab/sim_env_ws/src /home/ceslab/sim_env_ws/build /home/ceslab/sim_env_ws/build /home/ceslab/sim_env_ws/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

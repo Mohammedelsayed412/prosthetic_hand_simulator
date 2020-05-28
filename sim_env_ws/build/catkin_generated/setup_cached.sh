@@ -7,8 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/ceslab/sim_env_ws/devel:$CMAKE_PREFIX_PATH"
-export PATH="/opt/ros/melodic/bin:/home/ceslab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
-export PWD="/home/ceslab/sim_env_ws/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/ceslab/sim_env_ws/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/ceslab/sim_env_ws/src:$ROS_PACKAGE_PATH"
+export LD_LIBRARY_PATH="/opt/ros/melodic/lib"
+export PKG_CONFIG_PATH="/opt/ros/melodic/lib/pkgconfig"
+export PWD="/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build"
