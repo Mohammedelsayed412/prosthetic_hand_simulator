@@ -8,10 +8,35 @@
   
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find prosthetic_gazebo)/worlds/simple_world.world"/>
+    <arg name="world_name" value="$(find prosthetic_gazebo)/worlds/startup_world.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gui" value="$(arg gui)"/>
     <arg name="verbose" value="$(arg verbose)"/>
   </include>
+  
+  <!--Robot launch files arguments-->
+  <arg name="arm"  default="True"/>
+  <arg name="end_effector"  default="pal-hey5"/>
+  <arg name="ft_sensor"  default="schunk-ft"/>
+  <arg name="laser_model"  default="false"/>
+  <arg name="camera_model"  default="orbbec-astra"/>
+  <arg name="wrist_model"  default="wrist-2017"/>
+  <arg name="multi" default=""/>
+  <arg name="gzpose" default="-x -0.9 -y -0.9 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
+  <!-- Robot description -->
+  <param name="robot_description"
+    command="rosrun xacro xacro '$(find tiago_description)/robots/tiago.urdf.xacro'
+    arm:=$(arg arm)
+    wrist_model:=$(arg wrist_model)
+    end_effector:=$(arg end_effector)
+    ft_sensor:=$(arg ft_sensor)
+    laser_model:=$(arg laser_model)
+    camera_model:=$(arg camera_model)
+    $(arg multi)" />
+  
+  <rosparam command="load" file="$(find tiago_description)/config/collision/collision_parameters.yaml" />
+  <!-- Spawn a robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description $(arg gzpose) -reference_frame cafe_table::link -model tiago" />
 
 </launch>
