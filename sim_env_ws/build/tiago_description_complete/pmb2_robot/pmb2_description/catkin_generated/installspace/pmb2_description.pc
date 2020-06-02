@@ -1,0 +1,8 @@
+prefix=/home/ceslab/prosthetic_hand_simulator/sim_env_ws/install
+
+Name: pmb2_description
+Description: Description of pmb2_description
+Version: 3.0.10
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

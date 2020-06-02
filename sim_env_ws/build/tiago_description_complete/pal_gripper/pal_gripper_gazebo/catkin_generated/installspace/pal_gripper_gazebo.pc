@@ -1,0 +1,8 @@
+prefix=/home/ceslab/prosthetic_hand_simulator/sim_env_ws/install
+
+Name: pal_gripper_gazebo
+Description: Description of pal_gripper_gazebo
+Version: 1.0.3
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

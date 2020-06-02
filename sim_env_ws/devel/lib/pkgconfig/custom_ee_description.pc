@@ -1,0 +1,8 @@
+prefix=/home/ceslab/prosthetic_hand_simulator/sim_env_ws/devel
+
+Name: custom_ee_description
+Description: Description of custom_ee_description
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

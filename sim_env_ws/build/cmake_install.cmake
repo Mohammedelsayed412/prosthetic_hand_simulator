@@ -154,6 +154,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pmb2_robot/pmb2_description/cmake_install.cmake")
   include("/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_robot/tiago_description/cmake_install.cmake")
   include("/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_gripper/pal_parallel_gripper_wrapper/cmake_install.cmake")
+  include("/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/robot_hw_sim_latency/robot_hw_sim_latency/cmake_install.cmake")
+  include("/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/robot_hw_sim_latency/latency_plugin_simple_queue/cmake_install.cmake")
   include("/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_gripper/pal_gripper_description/cmake_install.cmake")
   include("/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper_description/cmake_install.cmake")
 

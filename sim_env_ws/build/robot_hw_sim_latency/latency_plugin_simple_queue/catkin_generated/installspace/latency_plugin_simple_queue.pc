@@ -1,0 +1,8 @@
+prefix=/home/ceslab/prosthetic_hand_simulator/sim_env_ws/install
+
+Name: latency_plugin_simple_queue
+Description: Description of latency_plugin_simple_queue
+Version: 0.0.1
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -llatency_plugin_simple_queue
+Requires: roscpp pluginlib robot_hw_sim_latency
