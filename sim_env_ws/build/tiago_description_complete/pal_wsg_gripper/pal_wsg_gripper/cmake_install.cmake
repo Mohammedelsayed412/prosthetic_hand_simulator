@@ -1,8 +1,8 @@
-# Install script for directory: /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper
+# Install script for directory: /home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/sahar/prosthetic_hand_simulator/sim_env_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper/catkin_generated/installspace/pal_wsg_gripper.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper/catkin_generated/installspace/pal_wsg_gripper.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pal_wsg_gripper/cmake" TYPE FILE FILES
-    "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper/catkin_generated/installspace/pal_wsg_gripperConfig.cmake"
-    "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper/catkin_generated/installspace/pal_wsg_gripperConfig-version.cmake"
+    "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper/catkin_generated/installspace/pal_wsg_gripperConfig.cmake"
+    "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper/catkin_generated/installspace/pal_wsg_gripperConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pal_wsg_gripper" TYPE FILE FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pal_wsg_gripper" TYPE FILE FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper/package.xml")
 endif()
 

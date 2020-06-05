@@ -1,8 +1,8 @@
-# Install script for directory: /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_description_calibration
+# Install script for directory: /home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_description_calibration
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/sahar/prosthetic_hand_simulator/sim_env_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,21 +38,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_description_calibration/catkin_generated/installspace/tiago_description_calibration.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_description_calibration/catkin_generated/installspace/tiago_description_calibration.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_description_calibration/cmake" TYPE FILE FILES
-    "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_description_calibration/catkin_generated/installspace/tiago_description_calibrationConfig.cmake"
-    "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_description_calibration/catkin_generated/installspace/tiago_description_calibrationConfig-version.cmake"
+    "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_description_calibration/catkin_generated/installspace/tiago_description_calibrationConfig.cmake"
+    "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_description_calibration/catkin_generated/installspace/tiago_description_calibrationConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_description_calibration" TYPE FILE FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_description_calibration/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_description_calibration" TYPE FILE FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_description_calibration/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_description_calibration/urdf" TYPE DIRECTORY FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_description_calibration/urdf/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_description_calibration/urdf" TYPE DIRECTORY FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_description_calibration/urdf/")
 endif()
 

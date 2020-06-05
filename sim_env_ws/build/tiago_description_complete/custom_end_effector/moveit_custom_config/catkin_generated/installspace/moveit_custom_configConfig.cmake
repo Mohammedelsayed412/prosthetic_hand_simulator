@@ -67,14 +67,14 @@ set(moveit_custom_config_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(moveit_custom_config_SOURCE_PREFIX /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/custom_end_effector/moveit_custom_config)
-  set(moveit_custom_config_DEVEL_PREFIX /home/ceslab/prosthetic_hand_simulator/sim_env_ws/devel)
+  set(moveit_custom_config_SOURCE_PREFIX /home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/custom_end_effector/moveit_custom_config)
+  set(moveit_custom_config_DEVEL_PREFIX /home/sahar/prosthetic_hand_simulator/sim_env_ws/devel)
   set(moveit_custom_config_INSTALL_PREFIX "")
   set(moveit_custom_config_PREFIX ${moveit_custom_config_DEVEL_PREFIX})
 else()
   set(moveit_custom_config_SOURCE_PREFIX "")
   set(moveit_custom_config_DEVEL_PREFIX "")
-  set(moveit_custom_config_INSTALL_PREFIX /home/ceslab/prosthetic_hand_simulator/sim_env_ws/install)
+  set(moveit_custom_config_INSTALL_PREFIX /home/sahar/prosthetic_hand_simulator/sim_env_ws/install)
   set(moveit_custom_config_PREFIX ${moveit_custom_config_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ceslab/prosthetic_hand_simulator/sim_env_ws/install/lib;/home/ceslab/prosthetic_hand_simulator/sim_env_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/sahar/prosthetic_hand_simulator/sim_env_ws/install/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

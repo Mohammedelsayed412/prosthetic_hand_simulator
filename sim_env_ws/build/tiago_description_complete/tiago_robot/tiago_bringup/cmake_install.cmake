@@ -1,8 +1,8 @@
-# Install script for directory: /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_robot/tiago_bringup
+# Install script for directory: /home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_robot/tiago_bringup
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/sahar/prosthetic_hand_simulator/sim_env_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_robot/tiago_bringup/catkin_generated/installspace/tiago_bringup.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_robot/tiago_bringup/catkin_generated/installspace/tiago_bringup.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_bringup/cmake" TYPE FILE FILES
-    "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_robot/tiago_bringup/catkin_generated/installspace/tiago_bringupConfig.cmake"
-    "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_robot/tiago_bringup/catkin_generated/installspace/tiago_bringupConfig-version.cmake"
+    "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_robot/tiago_bringup/catkin_generated/installspace/tiago_bringupConfig.cmake"
+    "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/tiago_robot/tiago_bringup/catkin_generated/installspace/tiago_bringupConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_bringup" TYPE FILE FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_robot/tiago_bringup/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_bringup" TYPE FILE FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_robot/tiago_bringup/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_bringup/config" TYPE DIRECTORY FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_robot/tiago_bringup/config/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_bringup/config" TYPE DIRECTORY FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_robot/tiago_bringup/config/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_bringup/launch" TYPE DIRECTORY FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_robot/tiago_bringup/launch/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tiago_bringup/launch" TYPE DIRECTORY FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/tiago_robot/tiago_bringup/launch/")
 endif()
 

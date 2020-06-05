@@ -1,8 +1,8 @@
-# Install script for directory: /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/custom_end_effector/custom_ee_configuration
+# Install script for directory: /home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/custom_end_effector/custom_ee_configuration
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/sahar/prosthetic_hand_simulator/sim_env_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,21 +38,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/custom_end_effector/custom_ee_configuration/catkin_generated/installspace/custom_ee_configuration.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/custom_end_effector/custom_ee_configuration/catkin_generated/installspace/custom_ee_configuration.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/custom_ee_configuration/cmake" TYPE FILE FILES
-    "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/custom_end_effector/custom_ee_configuration/catkin_generated/installspace/custom_ee_configurationConfig.cmake"
-    "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/custom_end_effector/custom_ee_configuration/catkin_generated/installspace/custom_ee_configurationConfig-version.cmake"
+    "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/custom_end_effector/custom_ee_configuration/catkin_generated/installspace/custom_ee_configurationConfig.cmake"
+    "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/custom_end_effector/custom_ee_configuration/catkin_generated/installspace/custom_ee_configurationConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/custom_ee_configuration" TYPE FILE FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/custom_end_effector/custom_ee_configuration/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/custom_ee_configuration" TYPE FILE FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/custom_end_effector/custom_ee_configuration/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/custom_ee_configuration" TYPE DIRECTORY FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/custom_end_effector/custom_ee_configuration/config" USE_SOURCE_PERMISSIONS)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/custom_ee_configuration" TYPE DIRECTORY FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/custom_end_effector/custom_ee_configuration/config" USE_SOURCE_PERMISSIONS)
 endif()
 

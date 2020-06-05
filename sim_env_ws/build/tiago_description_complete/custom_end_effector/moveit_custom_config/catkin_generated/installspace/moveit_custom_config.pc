@@ -1,4 +1,4 @@
-prefix=/home/ceslab/prosthetic_hand_simulator/sim_env_ws/install
+prefix=/home/sahar/prosthetic_hand_simulator/sim_env_ws/install
 
 Name: moveit_custom_config
 Description: Description of moveit_custom_config

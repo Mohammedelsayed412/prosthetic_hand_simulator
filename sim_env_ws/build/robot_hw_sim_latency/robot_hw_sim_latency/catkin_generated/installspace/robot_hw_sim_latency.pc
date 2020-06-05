@@ -1,8 +1,0 @@
-prefix=/home/ceslab/prosthetic_hand_simulator/sim_env_ws/install
-
-Name: robot_hw_sim_latency
-Description: Description of robot_hw_sim_latency
-Version: 0.0.1
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -lrobot_hw_sim_latency
-Requires: roscpp std_msgs controller_manager control_toolbox pluginlib hardware_interface transmission_interface joint_limits_interface urdf angles gazebo_ros_control

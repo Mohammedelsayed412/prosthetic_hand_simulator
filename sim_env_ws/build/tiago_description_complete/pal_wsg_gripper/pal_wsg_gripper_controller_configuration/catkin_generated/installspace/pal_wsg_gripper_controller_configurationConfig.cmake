@@ -67,14 +67,14 @@ set(pal_wsg_gripper_controller_configuration_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(pal_wsg_gripper_controller_configuration_SOURCE_PREFIX /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper_controller_configuration)
-  set(pal_wsg_gripper_controller_configuration_DEVEL_PREFIX /home/ceslab/prosthetic_hand_simulator/sim_env_ws/devel)
+  set(pal_wsg_gripper_controller_configuration_SOURCE_PREFIX /home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper_controller_configuration)
+  set(pal_wsg_gripper_controller_configuration_DEVEL_PREFIX /home/sahar/prosthetic_hand_simulator/sim_env_ws/devel)
   set(pal_wsg_gripper_controller_configuration_INSTALL_PREFIX "")
   set(pal_wsg_gripper_controller_configuration_PREFIX ${pal_wsg_gripper_controller_configuration_DEVEL_PREFIX})
 else()
   set(pal_wsg_gripper_controller_configuration_SOURCE_PREFIX "")
   set(pal_wsg_gripper_controller_configuration_DEVEL_PREFIX "")
-  set(pal_wsg_gripper_controller_configuration_INSTALL_PREFIX /home/ceslab/prosthetic_hand_simulator/sim_env_ws/install)
+  set(pal_wsg_gripper_controller_configuration_INSTALL_PREFIX /home/sahar/prosthetic_hand_simulator/sim_env_ws/install)
   set(pal_wsg_gripper_controller_configuration_PREFIX ${pal_wsg_gripper_controller_configuration_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ceslab/prosthetic_hand_simulator/sim_env_ws/install/lib;/home/ceslab/prosthetic_hand_simulator/sim_env_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/sahar/prosthetic_hand_simulator/sim_env_ws/install/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

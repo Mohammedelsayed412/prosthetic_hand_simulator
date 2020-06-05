@@ -1,8 +1,8 @@
-# Install script for directory: /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo
+# Install script for directory: /home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/sahar/prosthetic_hand_simulator/sim_env_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/catkin_generated/installspace/pal_gripper_controller_configuration_gazebo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/catkin_generated/installspace/pal_gripper_controller_configuration_gazebo.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pal_gripper_controller_configuration_gazebo/cmake" TYPE FILE FILES
-    "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/catkin_generated/installspace/pal_gripper_controller_configuration_gazeboConfig.cmake"
-    "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/catkin_generated/installspace/pal_gripper_controller_configuration_gazeboConfig-version.cmake"
+    "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/catkin_generated/installspace/pal_gripper_controller_configuration_gazeboConfig.cmake"
+    "/home/sahar/prosthetic_hand_simulator/sim_env_ws/build/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/catkin_generated/installspace/pal_gripper_controller_configuration_gazeboConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pal_gripper_controller_configuration_gazebo" TYPE FILE FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pal_gripper_controller_configuration_gazebo" TYPE FILE FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pal_gripper_controller_configuration_gazebo/launch" TYPE DIRECTORY FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/launch/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pal_gripper_controller_configuration_gazebo/launch" TYPE DIRECTORY FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/launch/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pal_gripper_controller_configuration_gazebo" TYPE PROGRAM FILES "/home/ceslab/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/scripts/home_gripper.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pal_gripper_controller_configuration_gazebo" TYPE PROGRAM FILES "/home/sahar/prosthetic_hand_simulator/sim_env_ws/src/tiago_description_complete/pal_gripper/pal_gripper_controller_configuration_gazebo/scripts/home_gripper.py")
 endif()
 

@@ -1,4 +1,4 @@
-prefix=/home/ceslab/prosthetic_hand_simulator/sim_env_ws/devel
+prefix=/home/sahar/prosthetic_hand_simulator/sim_env_ws/devel
 
 Name: tiago_controller_configuration
 Description: Description of tiago_controller_configuration

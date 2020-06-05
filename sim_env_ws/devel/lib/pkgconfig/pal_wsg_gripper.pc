@@ -1,4 +1,4 @@
-prefix=/home/ceslab/prosthetic_hand_simulator/sim_env_ws/devel
+prefix=/home/sahar/prosthetic_hand_simulator/sim_env_ws/devel
 
 Name: pal_wsg_gripper
 Description: Description of pal_wsg_gripper

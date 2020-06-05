@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/ceslab/prosthetic_hand_simulator/sim_env_ws/src
-# Build directory: /home/ceslab/prosthetic_hand_simulator/sim_env_ws/build
+# Source directory: /home/sahar/prosthetic_hand_simulator/sim_env_ws/src
+# Build directory: /home/sahar/prosthetic_hand_simulator/sim_env_ws/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
@@ -25,8 +25,8 @@ subdirs("tiago_description_complete/tiago_robot/tiago_bringup")
 subdirs("tiago_description_complete/tiago_robot/tiago_controller_configuration")
 subdirs("tiago_description_complete/tiago_description_calibration")
 subdirs("tiago_description_complete/tiago_robot/tiago_robot")
-subdirs("tiago_description_complete/pmb2_robot/pmb2_description")
-subdirs("tiago_description_complete/tiago_robot/tiago_description")
 subdirs("tiago_description_complete/pal_gripper/pal_parallel_gripper_wrapper")
 subdirs("tiago_description_complete/pal_gripper/pal_gripper_description")
 subdirs("tiago_description_complete/pal_wsg_gripper/pal_wsg_gripper_description")
+subdirs("tiago_description_complete/pmb2_robot/pmb2_description")
+subdirs("tiago_description_complete/tiago_robot/tiago_description")
