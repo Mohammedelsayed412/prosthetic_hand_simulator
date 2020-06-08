@@ -1,0 +1,18 @@
+<launch>
+  <!-- set parameter on Parameter Server -->
+  <param name="robot_description" command="rosrun xacro xacro
+'$(find arm_description)/urdf/arm_stand.urdf.xacro'" />
+
+  <!-- Start Joint state publisher node which will publish the joint values -->
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui"
+  type="joint_state_publisher_gui">
+  </node>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher"
+  type="robot_state_publisher" respawn="false" output="screen"/>
+
+  <!-- visualize robot model in 3D -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find arm_description)/urdf.rviz" />
+
+</launch>
