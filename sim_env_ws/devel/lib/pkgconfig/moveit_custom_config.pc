@@ -1,8 +1,0 @@
-prefix=/home/sahar/prosthetic_hand_simulator/sim_env_ws/devel
-
-Name: moveit_custom_config
-Description: Description of moveit_custom_config
-Version: 0.1.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

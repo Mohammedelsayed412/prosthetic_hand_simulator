@@ -1,8 +1,0 @@
-prefix=/home/sahar/prosthetic_hand_simulator/sim_env_ws/install
-
-Name: pmb2_controller_configuration
-Description: Description of pmb2_controller_configuration
-Version: 3.0.10
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/sahar/prosthetic_hand_simulator/sim_env_ws/devel
-
-Name: hey5_description
-Description: Description of hey5_description
-Version: 1.0.3
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

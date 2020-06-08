@@ -1,8 +1,0 @@
-prefix=/home/sahar/prosthetic_hand_simulator/sim_env_ws/devel
-
-Name: prosthetic_gazebo
-Description: Description of prosthetic_gazebo
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

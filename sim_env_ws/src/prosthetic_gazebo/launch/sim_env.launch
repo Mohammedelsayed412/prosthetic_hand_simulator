@@ -38,5 +38,23 @@
   <rosparam command="load" file="$(find tiago_description)/config/collision/collision_parameters.yaml" />
   <!-- Spawn a robot into Gazebo -->
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description $(arg gzpose) -reference_frame cafe_table::link -model tiago" />
+  
+  <!-- Load default controllers -->
+  <include file="$(find tiago_controller_configuration)/launch/tiago_controllers.launch">
+    <arg name="arm" value="$(arg arm)"/>
+    <arg name="end_effector" value="$(arg end_effector)"/>
+    <arg name="ft_sensor" value="$(arg ft_sensor)"/>
+    <arg name="laser_model" value="$(arg laser_model)"/>
+    <arg name="camera_model" value="$(arg camera_model)"/>
+    <arg name="wrist_model" value="$(arg wrist_model)"/>
+  </include>
+
+  <!-- Robot state publisher -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0"/>
+    <param name="use_tf_static" type="bool" value="true"/>
+  </node>
+
+
 
 </launch>
