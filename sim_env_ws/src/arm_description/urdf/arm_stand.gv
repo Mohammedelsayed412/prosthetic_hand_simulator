@@ -1,0 +1,143 @@
+digraph G {
+node [shape=box];
+"world" [label="world"];
+"base_link" [label="base_link"];
+"mid_link" [label="mid_link"];
+"ball_link" [label="ball_link"];
+"ball_link_psi_link" [label="ball_link_psi_link"];
+"ball_link_theta_link" [label="ball_link_theta_link"];
+"top_link" [label="top_link"];
+"hand_palm_link" [label="hand_palm_link"];
+"hand_grasping_frame" [label="hand_grasping_frame"];
+"hand_index_abd_link" [label="hand_index_abd_link"];
+"hand_index_virtual_1_link" [label="hand_index_virtual_1_link"];
+"hand_index_flex_1_link" [label="hand_index_flex_1_link"];
+"hand_index_virtual_2_link" [label="hand_index_virtual_2_link"];
+"hand_index_flex_2_link" [label="hand_index_flex_2_link"];
+"hand_index_virtual_3_link" [label="hand_index_virtual_3_link"];
+"hand_index_flex_3_link" [label="hand_index_flex_3_link"];
+"hand_index_link" [label="hand_index_link"];
+"hand_little_abd_link" [label="hand_little_abd_link"];
+"hand_little_virtual_1_link" [label="hand_little_virtual_1_link"];
+"hand_little_flex_1_link" [label="hand_little_flex_1_link"];
+"hand_little_virtual_2_link" [label="hand_little_virtual_2_link"];
+"hand_little_flex_2_link" [label="hand_little_flex_2_link"];
+"hand_little_virtual_3_link" [label="hand_little_virtual_3_link"];
+"hand_little_flex_3_link" [label="hand_little_flex_3_link"];
+"hand_middle_abd_link" [label="hand_middle_abd_link"];
+"hand_middle_virtual_1_link" [label="hand_middle_virtual_1_link"];
+"hand_middle_flex_1_link" [label="hand_middle_flex_1_link"];
+"hand_middle_virtual_2_link" [label="hand_middle_virtual_2_link"];
+"hand_middle_flex_2_link" [label="hand_middle_flex_2_link"];
+"hand_middle_virtual_3_link" [label="hand_middle_virtual_3_link"];
+"hand_middle_flex_3_link" [label="hand_middle_flex_3_link"];
+"hand_mrl_link" [label="hand_mrl_link"];
+"hand_ring_abd_link" [label="hand_ring_abd_link"];
+"hand_ring_virtual_1_link" [label="hand_ring_virtual_1_link"];
+"hand_ring_flex_1_link" [label="hand_ring_flex_1_link"];
+"hand_ring_virtual_2_link" [label="hand_ring_virtual_2_link"];
+"hand_ring_flex_2_link" [label="hand_ring_flex_2_link"];
+"hand_ring_virtual_3_link" [label="hand_ring_virtual_3_link"];
+"hand_ring_flex_3_link" [label="hand_ring_flex_3_link"];
+"hand_thumb_abd_link" [label="hand_thumb_abd_link"];
+"hand_thumb_virtual_1_link" [label="hand_thumb_virtual_1_link"];
+"hand_thumb_flex_1_link" [label="hand_thumb_flex_1_link"];
+"hand_thumb_virtual_2_link" [label="hand_thumb_virtual_2_link"];
+"hand_thumb_flex_2_link" [label="hand_thumb_flex_2_link"];
+"hand_thumb_link" [label="hand_thumb_link"];
+"hand_safety_box" [label="hand_safety_box"];
+"hand_tool_link" [label="hand_tool_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"world" -> "fixed" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"fixed" -> "base_link"
+"base_link" -> "joint_base_mid" [label="xyz: 0 0.1 0.95 \nrpy: 0 -0 0"]
+"joint_base_mid" -> "mid_link"
+"mid_link" -> "joint_mid_top" [label="xyz: 0 0.1 0.4 \nrpy: 0 -0 0"]
+"joint_mid_top" -> "ball_link"
+"ball_link" -> "joint_mid_top_psi" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"joint_mid_top_psi" -> "ball_link_psi_link"
+"ball_link_psi_link" -> "joint_mid_top_theta" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"joint_mid_top_theta" -> "ball_link_theta_link"
+"ball_link_theta_link" -> "joint_mid_top__phi" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"joint_mid_top__phi" -> "top_link"
+"top_link" -> "hand_palm_joint" [label="xyz: 0 0 0.45 \nrpy: 0 -1.5708 0"]
+"hand_palm_joint" -> "hand_palm_link"
+"hand_palm_link" -> "hand_grasping_fixed_joint" [label="xyz: 0.13 0.02 0 \nrpy: 0 -0 0"]
+"hand_grasping_fixed_joint" -> "hand_grasping_frame"
+"hand_palm_link" -> "hand_index_abd_joint" [label="xyz: 0.1265 0.0042 0.0265 \nrpy: -1.5708 -0.523599 -3.20494e-17"]
+"hand_index_abd_joint" -> "hand_index_abd_link"
+"hand_index_abd_link" -> "hand_index_virtual_1_joint" [label="xyz: 0.009 0 0 \nrpy: 1.5708 -0 0"]
+"hand_index_virtual_1_joint" -> "hand_index_virtual_1_link"
+"hand_index_virtual_1_link" -> "hand_index_flex_1_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_index_flex_1_joint" -> "hand_index_flex_1_link"
+"hand_index_flex_1_link" -> "hand_index_virtual_2_joint" [label="xyz: 0.009 0 0 \nrpy: 0 -0 0"]
+"hand_index_virtual_2_joint" -> "hand_index_virtual_2_link"
+"hand_index_virtual_2_link" -> "hand_index_flex_2_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_index_flex_2_joint" -> "hand_index_flex_2_link"
+"hand_index_flex_2_link" -> "hand_index_virtual_3_joint" [label="xyz: 0.009 0 0 \nrpy: 0 -0 0"]
+"hand_index_virtual_3_joint" -> "hand_index_virtual_3_link"
+"hand_index_virtual_3_link" -> "hand_index_flex_3_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_index_flex_3_joint" -> "hand_index_flex_3_link"
+"hand_palm_link" -> "hand_index_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"hand_index_joint" -> "hand_index_link"
+"hand_palm_link" -> "hand_little_abd_joint" [label="xyz: 0.1165 0.0042 -0.032 \nrpy: -1.5708 0.523599 3.20494e-17"]
+"hand_little_abd_joint" -> "hand_little_abd_link"
+"hand_little_abd_link" -> "hand_little_virtual_1_joint" [label="xyz: 0.009 0 0 \nrpy: 1.5708 -0 0"]
+"hand_little_virtual_1_joint" -> "hand_little_virtual_1_link"
+"hand_little_virtual_1_link" -> "hand_little_flex_1_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_little_flex_1_joint" -> "hand_little_flex_1_link"
+"hand_little_flex_1_link" -> "hand_little_virtual_2_joint" [label="xyz: 0.009 0 0 \nrpy: 0 -0 0"]
+"hand_little_virtual_2_joint" -> "hand_little_virtual_2_link"
+"hand_little_virtual_2_link" -> "hand_little_flex_2_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_little_flex_2_joint" -> "hand_little_flex_2_link"
+"hand_little_flex_2_link" -> "hand_little_virtual_3_joint" [label="xyz: 0.009 0 0 \nrpy: 0 -0 0"]
+"hand_little_virtual_3_joint" -> "hand_little_virtual_3_link"
+"hand_little_virtual_3_link" -> "hand_little_flex_3_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_little_flex_3_joint" -> "hand_little_flex_3_link"
+"hand_palm_link" -> "hand_middle_abd_joint" [label="xyz: 0.1335 0.0042 0.007 \nrpy: -1.5708 0 0"]
+"hand_middle_abd_joint" -> "hand_middle_abd_link"
+"hand_middle_abd_link" -> "hand_middle_virtual_1_joint" [label="xyz: 0.009 0 0 \nrpy: 1.5708 -0 0"]
+"hand_middle_virtual_1_joint" -> "hand_middle_virtual_1_link"
+"hand_middle_virtual_1_link" -> "hand_middle_flex_1_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_middle_flex_1_joint" -> "hand_middle_flex_1_link"
+"hand_middle_flex_1_link" -> "hand_middle_virtual_2_joint" [label="xyz: 0.009 0 0 \nrpy: 0 -0 0"]
+"hand_middle_virtual_2_joint" -> "hand_middle_virtual_2_link"
+"hand_middle_virtual_2_link" -> "hand_middle_flex_2_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_middle_flex_2_joint" -> "hand_middle_flex_2_link"
+"hand_middle_flex_2_link" -> "hand_middle_virtual_3_joint" [label="xyz: 0.009 0 0 \nrpy: 0 -0 0"]
+"hand_middle_virtual_3_joint" -> "hand_middle_virtual_3_link"
+"hand_middle_virtual_3_link" -> "hand_middle_flex_3_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_middle_flex_3_joint" -> "hand_middle_flex_3_link"
+"hand_palm_link" -> "hand_mrl_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"hand_mrl_joint" -> "hand_mrl_link"
+"hand_palm_link" -> "hand_ring_abd_joint" [label="xyz: 0.1265 0.0042 -0.0125 \nrpy: -1.5708 0.261799 2.87347e-17"]
+"hand_ring_abd_joint" -> "hand_ring_abd_link"
+"hand_ring_abd_link" -> "hand_ring_virtual_1_joint" [label="xyz: 0.009 0 0 \nrpy: 1.5708 -0 0"]
+"hand_ring_virtual_1_joint" -> "hand_ring_virtual_1_link"
+"hand_ring_virtual_1_link" -> "hand_ring_flex_1_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_ring_flex_1_joint" -> "hand_ring_flex_1_link"
+"hand_ring_flex_1_link" -> "hand_ring_virtual_2_joint" [label="xyz: 0.009 0 0 \nrpy: 0 -0 0"]
+"hand_ring_virtual_2_joint" -> "hand_ring_virtual_2_link"
+"hand_ring_virtual_2_link" -> "hand_ring_flex_2_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_ring_flex_2_joint" -> "hand_ring_flex_2_link"
+"hand_ring_flex_2_link" -> "hand_ring_virtual_3_joint" [label="xyz: 0.009 0 0 \nrpy: 0 -0 0"]
+"hand_ring_virtual_3_joint" -> "hand_ring_virtual_3_link"
+"hand_ring_virtual_3_link" -> "hand_ring_flex_3_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_ring_flex_3_joint" -> "hand_ring_flex_3_link"
+"hand_palm_link" -> "hand_thumb_abd_joint" [label="xyz: 0.0901 0.0134 0.038 \nrpy: 0 -1.13446 0"]
+"hand_thumb_abd_joint" -> "hand_thumb_abd_link"
+"hand_thumb_abd_link" -> "hand_thumb_virtual_1_joint" [label="xyz: 0.0225 0.003 0 \nrpy: -1.14424 0 0"]
+"hand_thumb_virtual_1_joint" -> "hand_thumb_virtual_1_link"
+"hand_thumb_virtual_1_link" -> "hand_thumb_flex_1_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_thumb_flex_1_joint" -> "hand_thumb_flex_1_link"
+"hand_thumb_flex_1_link" -> "hand_thumb_virtual_2_joint" [label="xyz: 0.009 0 0 \nrpy: 0 -0 0"]
+"hand_thumb_virtual_2_joint" -> "hand_thumb_virtual_2_link"
+"hand_thumb_virtual_2_link" -> "hand_thumb_flex_2_joint" [label="xyz: 0.013 0 0 \nrpy: 0 -0 0"]
+"hand_thumb_flex_2_joint" -> "hand_thumb_flex_2_link"
+"hand_palm_link" -> "hand_thumb_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"hand_thumb_joint" -> "hand_thumb_link"
+"top_link" -> "hand_safety_box_joint" [label="xyz: 0 0 0.45 \nrpy: 0 -1.5708 0"]
+"hand_safety_box_joint" -> "hand_safety_box"
+"top_link" -> "hand_tool_joint" [label="xyz: 0 0 0.45 \nrpy: 0 -1.5708 0"]
+"hand_tool_joint" -> "hand_tool_link"
+}
