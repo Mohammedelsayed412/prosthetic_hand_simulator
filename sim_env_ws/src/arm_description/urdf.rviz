@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /RobotModel1
-        - /RobotModel1/Status1
         - /RobotModel1/Links1
         - /TF1
       Splitter Ratio: 0.5
@@ -74,6 +73,204 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        hand_grasping_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        hand_index_abd_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_index_flex_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_index_flex_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_index_flex_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_index_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_index_virtual_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_index_virtual_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_index_virtual_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_little_abd_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_little_flex_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_little_flex_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_little_flex_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_little_virtual_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_little_virtual_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_little_virtual_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_middle_abd_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_middle_flex_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_middle_flex_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_middle_flex_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_middle_virtual_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_middle_virtual_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_middle_virtual_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_mrl_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_palm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_ring_abd_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_ring_flex_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_ring_flex_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_ring_flex_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_ring_virtual_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_ring_virtual_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_ring_virtual_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_safety_box:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_thumb_abd_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_thumb_flex_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_thumb_flex_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_thumb_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_thumb_virtual_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_thumb_virtual_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_tool_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         mid_link:
           Alpha: 1
           Show Axes: false
@@ -99,6 +296,86 @@ Visualization Manager:
           Value: true
         dummy:
           Value: true
+        hand_grasping_frame:
+          Value: true
+        hand_index_abd_link:
+          Value: true
+        hand_index_flex_1_link:
+          Value: true
+        hand_index_flex_2_link:
+          Value: true
+        hand_index_flex_3_link:
+          Value: true
+        hand_index_link:
+          Value: true
+        hand_index_virtual_1_link:
+          Value: true
+        hand_index_virtual_2_link:
+          Value: true
+        hand_index_virtual_3_link:
+          Value: true
+        hand_little_abd_link:
+          Value: true
+        hand_little_flex_1_link:
+          Value: true
+        hand_little_flex_2_link:
+          Value: true
+        hand_little_flex_3_link:
+          Value: true
+        hand_little_virtual_1_link:
+          Value: true
+        hand_little_virtual_2_link:
+          Value: true
+        hand_little_virtual_3_link:
+          Value: true
+        hand_middle_abd_link:
+          Value: true
+        hand_middle_flex_1_link:
+          Value: true
+        hand_middle_flex_2_link:
+          Value: true
+        hand_middle_flex_3_link:
+          Value: true
+        hand_middle_virtual_1_link:
+          Value: true
+        hand_middle_virtual_2_link:
+          Value: true
+        hand_middle_virtual_3_link:
+          Value: true
+        hand_mrl_link:
+          Value: true
+        hand_palm_link:
+          Value: true
+        hand_ring_abd_link:
+          Value: true
+        hand_ring_flex_1_link:
+          Value: true
+        hand_ring_flex_2_link:
+          Value: true
+        hand_ring_flex_3_link:
+          Value: true
+        hand_ring_virtual_1_link:
+          Value: true
+        hand_ring_virtual_2_link:
+          Value: true
+        hand_ring_virtual_3_link:
+          Value: true
+        hand_safety_box:
+          Value: true
+        hand_thumb_abd_link:
+          Value: true
+        hand_thumb_flex_1_link:
+          Value: true
+        hand_thumb_flex_2_link:
+          Value: true
+        hand_thumb_link:
+          Value: true
+        hand_thumb_virtual_1_link:
+          Value: true
+        hand_thumb_virtual_2_link:
+          Value: true
+        hand_tool_link:
+          Value: true
         mid_link:
           Value: true
         top_link:
@@ -106,14 +383,64 @@ Visualization Manager:
       Marker Scale: 1
       Name: TF
       Show Arrows: true
-      Show Axes: true
-      Show Names: true
+      Show Axes: false
+      Show Names: false
       Tree:
         dummy:
           base_link:
             mid_link:
               top_link:
-                {}
+                hand_palm_link:
+                  hand_grasping_frame:
+                    {}
+                  hand_index_abd_link:
+                    hand_index_virtual_1_link:
+                      hand_index_flex_1_link:
+                        hand_index_virtual_2_link:
+                          hand_index_flex_2_link:
+                            hand_index_virtual_3_link:
+                              hand_index_flex_3_link:
+                                {}
+                  hand_index_link:
+                    {}
+                  hand_little_abd_link:
+                    hand_little_virtual_1_link:
+                      hand_little_flex_1_link:
+                        hand_little_virtual_2_link:
+                          hand_little_flex_2_link:
+                            hand_little_virtual_3_link:
+                              hand_little_flex_3_link:
+                                {}
+                  hand_middle_abd_link:
+                    hand_middle_virtual_1_link:
+                      hand_middle_flex_1_link:
+                        hand_middle_virtual_2_link:
+                          hand_middle_flex_2_link:
+                            hand_middle_virtual_3_link:
+                              hand_middle_flex_3_link:
+                                {}
+                  hand_mrl_link:
+                    {}
+                  hand_ring_abd_link:
+                    hand_ring_virtual_1_link:
+                      hand_ring_flex_1_link:
+                        hand_ring_virtual_2_link:
+                          hand_ring_flex_2_link:
+                            hand_ring_virtual_3_link:
+                              hand_ring_flex_3_link:
+                                {}
+                  hand_thumb_abd_link:
+                    hand_thumb_virtual_1_link:
+                      hand_thumb_flex_1_link:
+                        hand_thumb_virtual_2_link:
+                          hand_thumb_flex_2_link:
+                            {}
+                  hand_thumb_link:
+                    {}
+                hand_safety_box:
+                  {}
+                hand_tool_link:
+                  {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -144,7 +471,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.154084205627441
+      Distance: 3.6905758380889893
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -159,10 +486,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8447970151901245
+      Pitch: 0.12479668110609055
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.525398850440979
+      Yaw: 2.2754008769989014
     Saved: ~
 Window Geometry:
   Displays:
@@ -180,5 +507,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1280
-  X: 0
-  Y: 23
+  X: 8
+  Y: 31

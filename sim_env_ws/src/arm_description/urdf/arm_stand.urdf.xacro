@@ -1,14 +1,16 @@
 <?xml version="1.0"?>
 <!-- Revolute-Revolute Manipulator -->
+
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm_stand">
   
   <!-- Constants for robot dimensions -->
   <xacro:property name="width" value="0.1" />
-  <xacro:property name="height1" value="2" />
-  <xacro:property name="height2" value="1" />
-  <xacro:property name="height3" value="1" />
+  <xacro:property name="height1" value="1" />
+  <xacro:property name="height2" value="0.5" />
+  <xacro:property name="height3" value="0.5" />
   <xacro:property name="axle_offset" value="0.05" />
   <xacro:property name="damp" value="0.7" />
+  
   
   <!-- Import Rviz colors -->
   <xacro:include
@@ -25,7 +27,17 @@
     </inertial>
   </xacro:macro>
   
+  <!-- Importing End-Effector -->
+  <!--Arguments-->
+  <xacro:arg name="end_effector" default="pal-hey5"/> <!-- false, pal-gripper, pal-hey5, schunk-wsg-->
+  <xacro:property name="end_effector" value="$(arg end_effector)" />
+  <xacro:property name="end_effector_name"       value="${'hand' if end_effector == 'pal-hey5' else 'gripper'}"/>
+  
+  <!-- Include end effector -->
   <!--<xacro:include filename="$(find hey5_description)/urdf/gripper.xacro"/>-->
+  <xacro:include filename="$(find tiago_description)/urdf/end_effector/end_effector.urdf.xacro" />
+  <xacro:include filename="$(find tiago_description_calibration)/urdf/calibration/calibration_constants.urdf.xacro" />
+  <xacro:tiago_end_effector name="${end_effector_name}" parent="top_link" type="${end_effector}" reflect="1"/>
   
   <link name="dummy">
    </link>
@@ -111,6 +123,16 @@
     <xacro:default_inertial z_value="${height3/2 - axle_offset}"
       i_value="1.0" mass="1"/>
   </link>
+  
+  
+ <!-- <joint name="hand_joint" type="revolute">
+    <parent link="top_link"/>
+    <child link="left_gripper"/>
+    <origin xyz="0 0 ${height2 - axle_offset}" rpy="0 -1.57 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30.0" lower="-0.548" upper="0.0" velocity="0.1"/>
+  </joint> -->
+  
 </robot>  
 
 <!--
