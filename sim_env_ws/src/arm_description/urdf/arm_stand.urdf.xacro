@@ -39,9 +39,18 @@
   <xacro:include filename="$(find tiago_description_calibration)/urdf/calibration/calibration_constants.urdf.xacro" />
   <xacro:tiago_end_effector name="${end_effector_name}" parent="top_link" type="${end_effector}" reflect="1"/>
   
-  <link name="dummy">
-   </link>
+  <!-- Include Gazebo tags -->
+  <xacro:include filename="$(find arm_description)/gazebo/arm_stand_gazebo.urdf.xacro"/>
+  
+  <!--Arm Stand-->
    
+  <link name="world"/>
+  
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+  
   <!-- Base Link -->
   <link name="base_link">
     <visual>
@@ -60,11 +69,6 @@
     <xacro:default_inertial z_value="${height1/2}" 
     i_value="1.0" mass="1"/>
   </link>
-  
-  <joint name="dummy_joint" type="fixed">
-     <parent link="dummy"/>
-     <child link="base_link"/>
-   </joint>
   
   <!-- Joint between Base Link and Middle Link -->
   <joint name="joint_base_mid" type="revolute">
@@ -104,21 +108,39 @@
     <dynamics damping="${damp}" />
     <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14"/>-->
   </joint>
-  <link name="ball_link" />
+  <link name="ball_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value=".00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001"  iyz="0.0" izz ="0.00001"/>
+    </inertial>
+  </link>
   <joint name="joint_mid_top_psi" type="continuous" >
       <parent link="ball_link" />
       <child link="ball_link_psi_link" />
       <axis xyz="0 0 1" />
       <dynamics damping="${damp}" />
   </joint>
-  <link name="ball_link_psi_link" />
+  <link name="ball_link_psi_link" >
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value=".00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.000011"  iyz="0.0" izz ="0.00001"/>
+    </inertial>
+  </link>
   <joint name="joint_mid_top_theta" type="continuous" >
       <parent link="ball_link_psi_link"/>
       <child link="ball_link_theta_link"/>
       <axis xyz="0 1 0" />
       <dynamics damping="${damp}" />
   </joint>
-  <link name="ball_link_theta_link" />
+  <link name="ball_link_theta_link" >
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value=".00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001"  iyz="0.0" izz ="0.00001"/>
+    </inertial>
+  </link>
   <joint name="joint_mid_top__phi" type="continuous" >
       <parent link="ball_link_theta_link"/>
       <child link="top_link"/>
@@ -126,7 +148,6 @@
       <dynamics damping="${damp}" />
   </joint>
     
-  
   <!-- Top Link -->
   <link name="top_link">
     <visual>
