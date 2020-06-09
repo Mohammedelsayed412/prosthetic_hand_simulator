@@ -95,15 +95,37 @@
       i_value="1.0" mass="1"/>
   </link>
   
-  <!-- Joint between Middle Link and Top Link -->
-  <joint name="joint_mid_top" type="revolute">
+  <!-- Joint between Middle Link and Top Link 3DOF -->
+  <joint name="joint_mid_top" type="fixed">
     <parent link="mid_link" />
-    <child link="top_link" />
+    <child link="ball_link" />
     <origin xyz="0 ${width} ${height2 - axle_offset*2}" rpy="0 0 0"/>
-    <axis xyz="0 1 0" />
+    <!--<axis xyz="0 1 0" />
     <dynamics damping="${damp}" />
-    <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14"/>
+    <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14"/>-->
   </joint>
+  <link name="ball_link" />
+  <joint name="joint_mid_top_psi" type="continuous" >
+      <parent link="ball_link" />
+      <child link="ball_link_psi_link" />
+      <axis xyz="0 0 1" />
+      <dynamics damping="${damp}" />
+  </joint>
+  <link name="ball_link_psi_link" />
+  <joint name="joint_mid_top_theta" type="continuous" >
+      <parent link="ball_link_psi_link"/>
+      <child link="ball_link_theta_link"/>
+      <axis xyz="0 1 0" />
+      <dynamics damping="${damp}" />
+  </joint>
+  <link name="ball_link_theta_link" />
+  <joint name="joint_mid_top__phi" type="continuous" >
+      <parent link="ball_link_theta_link"/>
+      <child link="top_link"/>
+      <axis xyz="1 0 0" />
+      <dynamics damping="${damp}" />
+  </joint>
+    
   
   <!-- Top Link -->
   <link name="top_link">
