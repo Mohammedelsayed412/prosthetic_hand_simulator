@@ -10,13 +10,14 @@
   <xacro:property name="height3" value="0.5" />
   <xacro:property name="axle_offset" value="0.05" />
   <xacro:property name="damp" value="0.7" />
+  <xacro:property name="camera_link" value="0.05" /> <!-- Size of square 'camera' box -->
   
   
   <!-- Import Rviz colors -->
   <xacro:include
       filename="$(find arm_description)/urdf/materials.urdf.xacro" />
 
-  <!-- Default Inertial -->
+  <!--< Default Inertial 
   <xacro:macro name="default_inertial" params="z_value i_value mass">
     <inertial>
       <origin xyz="0 0 ${z_value}" rpy="0 0 0"/>
@@ -25,7 +26,7 @@
                iyy="${i_value}" iyz="0.0"
                izz="${i_value}" />
     </inertial>
-  </xacro:macro>
+  </xacro:macro> -->
   
   <!-- Importing End-Effector -->
   <!--Arguments-->
@@ -37,7 +38,7 @@
   <!--<xacro:include filename="$(find hey5_description)/urdf/gripper.xacro"/>-->
   <xacro:include filename="$(find tiago_description)/urdf/end_effector/end_effector.urdf.xacro" />
   <xacro:include filename="$(find tiago_description_calibration)/urdf/calibration/calibration_constants.urdf.xacro" />
-  <xacro:tiago_end_effector name="${end_effector_name}" parent="top_link" type="${end_effector}" reflect="1"/>
+  <xacro:tiago_end_effector name="${end_effector_name}" parent="camera_link" type="${end_effector}" reflect="1"/>
   
   <!-- Include Gazebo tags -->
   <xacro:include filename="$(find arm_description)/gazebo/arm_stand_gazebo.urdf.xacro"/>
@@ -66,8 +67,16 @@
         <box size="${width} ${width} ${height1}" />
       </geometry>
     </collision>
-    <xacro:default_inertial z_value="${height1/2}" 
-    i_value="1.0" mass="1"/>
+    <inertial>
+      <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+    <!-- <xacro:default_inertial z_value="${height1/2}" 
+    i_value="1.0" mass="1"/> -->
   </link>
   
   <!-- Joint between Base Link and Middle Link -->
@@ -95,8 +104,17 @@
         <box size="${width} ${width} ${height2}" />
       </geometry>
     </collision>
-    <xacro:default_inertial z_value="${height2/2 - axle_offset}"
-      i_value="1.0" mass="1"/>
+    <inertial>
+      <origin xyz="0 0 ${height2/2 - axle_offset}" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+    
+    <!-- <xacro:default_inertial z_value="${height2/2 - axle_offset}"
+      i_value="1.0" mass="1"/> -->
   </link>
   
   <!-- Joint between Middle Link and Top Link 3DOF -->
@@ -148,7 +166,7 @@
       <dynamics damping="${damp}" />
   </joint>
     
-  <!-- Top Link -->
+  <!-- <Top Link -->
   <link name="top_link">
     <visual>
       <origin xyz="0 0 ${height3/2 - axle_offset}" rpy="0 0 0" />
@@ -163,8 +181,48 @@
         <box size="${width} ${width} ${height3}" />
       </geometry>
     </collision>
-    <xacro:default_inertial z_value="${height3/2 - axle_offset}"
-      i_value="1.0" mass="1"/>
+    <inertial>
+      <origin xyz="0 0 ${height3/2 - axle_offset}" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+    <!--< xacro:default_inertial z_value="${height3/2 - axle_offset}"
+      i_value="1.0" mass="1"/> -->
+      
+  </link>
+  
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="1 0 0" />
+    <origin xyz="${camera_link} 0 ${height3 - axle_offset*2}" rpy="0 0 0"/>
+    <parent link="top_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <!-- Camera Link -->
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
   </link>
   
   

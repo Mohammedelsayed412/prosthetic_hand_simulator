@@ -43,12 +43,12 @@
   </link>
   <joint name="hand_tool_joint" type="fixed">
     <origin rpy="0 -1.57 0" xyz="0 0 0.45"/>
-    <parent link="top_link"/>
+    <parent link="camera_link"/>
     <child link="hand_tool_link"/>
     <axis xyz="0 0 0"/>
   </joint>
   <joint name="hand_palm_joint" type="fixed">
-    <parent link="top_link"/>
+    <parent link="camera_link"/>
     <child link="hand_palm_link"/>
     <origin rpy="0 -1.57 0" xyz="0 0 0.45"/>
   </joint>
@@ -1777,7 +1777,7 @@
     </plugin>
   </gazebo>
   <joint name="hand_safety_box_joint" type="fixed">
-    <parent link="top_link"/>
+    <parent link="camera_link"/>
     <child link="hand_safety_box"/>
     <origin rpy="0 -1.57 0" xyz="0 0 0.45"/>
     <!--<origin xyz="0.1 0.02 ${reflect * 0.02}" rpy="0 0 0"/>-->
@@ -1812,6 +1812,10 @@
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- Camera Link -->
+  <gazebo reference="camera_link">
+    <material>Gazebo/White</material>
   </gazebo>
   <!-- Top Link -->
   <gazebo reference="top_link">
@@ -1952,13 +1956,44 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- <joint name="hand_joint" type="revolute">
+  <!-- Joint between top link and the camera link -->
+  <joint name="camera_joint" type="continuous">
     <parent link="top_link"/>
+    <child link="camera_link"/>
+    <axis xyz="1 0 0" />
+    <dynamics damping="${damp}" />
+  </joint>
+
+  <!-- Camera -->
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+   <!-- joint name="hand_joint" type="revolute"/>
+    <parent link="camera_link"/>
     <child link="left_gripper"/>
     <origin xyz="0 0 ${height2 - axle_offset}" rpy="0 -1.57 0"/>
     <axis xyz="0 0 1"/>
     <limit effort="30.0" lower="-0.548" upper="0.0" velocity="0.1"/>
-  </joint> -->
+  </joint--> 
 </robot>
 <!--
   This XML code defines a robot arm which has three links that are
