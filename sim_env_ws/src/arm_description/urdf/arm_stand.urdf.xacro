@@ -3,13 +3,22 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm_stand">
   
+  <gazebo reference='joint_mid_top'>
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  
+  <gazebo reference='camera_joint'>
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  
   <!-- Constants for robot dimensions -->
   <xacro:property name="width" value="0.1" />
   <xacro:property name="height1" value="1" />
   <xacro:property name="height2" value="0.5" />
   <xacro:property name="height3" value="0.5" />
   <xacro:property name="axle_offset" value="0.05" />
-  <xacro:property name="damp" value="0.7" />
+  <xacro:property name="damp" value="0" />
+  <xacro:property name="friction" value="0.1" />
   <xacro:property name="camera_link" value="0.05" /> 
   <!-- Size of square 'camera' box -->
   
@@ -77,9 +86,20 @@
     <child link="mid_link" />
     <origin xyz="0 ${width} ${height1 - axle_offset}" rpy="0 0 0"/>
     <axis xyz="0 1 0" />
-    <dynamics damping="${damp}" />
+    <dynamics damping="${damp}" friction = "${friction}" />
     <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14"/>
   </joint>
+  
+  <transmission name="trans_base_mid">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_base_mid">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_base_mid">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   
   <!-- Middle Link -->
   <link name="mid_link">
@@ -106,7 +126,7 @@
     <child link="ball_link" />
     <origin xyz="0 ${width} ${height2 - axle_offset*2}" rpy="0 0 0"/>
     <!--<axis xyz="0 1 0" />
-    <dynamics damping="${damp}" />
+    <dynamics damping="${damp}" friction = "${friction}" />
     <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14"/>-->
   </joint>
   <link name="ball_link">
@@ -119,9 +139,20 @@
   <joint name="joint_mid_top_psi" type="continuous" >
       <parent link="ball_link" />
       <child link="ball_link_psi_link" />
+      <!--<limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14"/>-->
       <axis xyz="0 0 1" />
-      <dynamics damping="${damp}" />
+      <dynamics damping="${damp}" friction = "${friction}" />
   </joint>
+  <transmission name="trans_mid_top_psi">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_mid_top_psi">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_mid_top_psi">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>  
   <link name="ball_link_psi_link" >
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -132,9 +163,20 @@
   <joint name="joint_mid_top_theta" type="continuous" >
       <parent link="ball_link_psi_link"/>
       <child link="ball_link_theta_link"/>
+      <!--<limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14"/>-->
       <axis xyz="0 1 0" />
-      <dynamics damping="${damp}" />
+      <dynamics damping="${damp}" friction = "${friction}" />
   </joint>
+  <transmission name="trans_mid_top_theta">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_mid_top_theta">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_mid_top_theta">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
   <link name="ball_link_theta_link" >
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -142,14 +184,25 @@
       <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001"  iyz="0.0" izz ="0.00001"/>
     </inertial>
   </link>
-  <joint name="joint_mid_top__phi" type="continuous" >
+  <joint name="joint_mid_top_phi" type="continuous" >
       <parent link="ball_link_theta_link"/>
       <child link="top_link"/>
       <axis xyz="1 0 0" />
-      <dynamics damping="${damp}" />
+      <!--<limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14"/>-->
+      <dynamics damping="${damp}" friction = "${friction}" />
   </joint>
+  <transmission name="trans_mid_top_phi">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_mid_top_phi">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_mid_top_phi">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
     
-  <!-- <Top Link -->
+  <!-- Top Link -->
   <link name="top_link">
     <visual>
       <origin xyz="0 0 ${height3/2 - axle_offset}" rpy="0 0 0" />
@@ -172,6 +225,7 @@
     <origin xyz="0 0 ${height2 - axle_offset*2}" rpy="0 1.57 -1.57"/>
     <parent link="top_link"/>
     <child link="camera_link"/>
+    <dynamics damping="${damp}" friction = "${friction}" />
   </joint>
 
   <!-- Camera Link -->
@@ -184,7 +238,7 @@
     </collision>
 
     <visual>
-      <origin xyz="0 0 ${camera_link + axle_offset/2}" rpy="0 0 0"/>
+      <origin xyz="0 0 ${camera_link + camera_link/2}" rpy="0 0 0"/>
       <geometry>
         <box size="${camera_link} ${camera_link} ${camera_link}"/>
       </geometry>

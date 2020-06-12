@@ -39,7 +39,8 @@
       <joint name="${finger_name}_abd_joint">
         <saturationLower>${jnt_abd_start}</saturationLower>
         <saturationUpper>${jnt_abd_stop}</saturationUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${abd_reduction}</mechanicalReduction>
@@ -52,7 +53,8 @@
       <joint name="${finger_name}_virtual_1_joint">
         <saturationLower>0.0</saturationLower>
         <deadBandUpper>${act_flex_start}</deadBandUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${flex_reduction}</mechanicalReduction>
@@ -64,7 +66,8 @@
       <joint name="${finger_name}_flex_1_joint">
         <saturationLower>0.0</saturationLower>
         <deadBandUpper>${act_flex_start}</deadBandUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${flex_reduction}</mechanicalReduction>
@@ -77,7 +80,8 @@
       <joint name="${finger_name}_virtual_2_joint">
         <saturationLower>0.0</saturationLower>
         <deadBandUpper>${act_flex_start}</deadBandUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${flex_reduction}</mechanicalReduction>
@@ -89,7 +93,8 @@
       <joint name="${finger_name}_flex_2_joint">
         <saturationLower>0.0</saturationLower>
         <deadBandUpper>${act_flex_start}</deadBandUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${flex_reduction}</mechanicalReduction>
@@ -123,7 +128,8 @@
       <joint name="${finger_name}_abd_joint">
         <saturationLower>${jnt_abd_start}</saturationLower>
         <saturationUpper>${jnt_abd_stop}</saturationUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${abd_reduction}</mechanicalReduction>
@@ -136,7 +142,8 @@
       <joint name="${finger_name}_virtual_1_joint">
         <saturationLower>0.0</saturationLower>
         <deadBandUpper>${act_flex_start}</deadBandUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${flex_reduction}</mechanicalReduction>
@@ -148,7 +155,8 @@
       <joint name="${finger_name}_flex_1_joint">
         <saturationLower>0.0</saturationLower>
         <deadBandUpper>${act_flex_start}</deadBandUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${flex_reduction}</mechanicalReduction>
@@ -161,7 +169,8 @@
       <joint name="${finger_name}_virtual_2_joint">
         <saturationLower>0.0</saturationLower>
         <deadBandUpper>${act_flex_start}</deadBandUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${flex_reduction}</mechanicalReduction>
@@ -173,7 +182,8 @@
       <joint name="${finger_name}_flex_2_joint">
         <saturationLower>0.0</saturationLower>
         <deadBandUpper>${act_flex_start}</deadBandUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${flex_reduction}</mechanicalReduction>
@@ -186,7 +196,8 @@
       <joint name="${finger_name}_virtual_3_joint">
         <saturationLower>0.0</saturationLower>
         <deadBandUpper>${act_flex_start}</deadBandUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${flex_reduction}</mechanicalReduction>
@@ -198,7 +209,8 @@
       <joint name="${finger_name}_flex_3_joint">
         <saturationLower>0.0</saturationLower>
         <deadBandUpper>${act_flex_start}</deadBandUpper>
-        <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
+        <!--<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>-->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${act_name}">
         <mechanicalReduction>${flex_reduction}</mechanicalReduction>
