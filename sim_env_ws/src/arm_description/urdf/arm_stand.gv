@@ -3,10 +3,8 @@ node [shape=box];
 "world" [label="world"];
 "base_link" [label="base_link"];
 "mid_link" [label="mid_link"];
-"ball_link" [label="ball_link"];
-"ball_link_psi_link" [label="ball_link_psi_link"];
-"ball_link_theta_link" [label="ball_link_theta_link"];
 "top_link" [label="top_link"];
+"fore_link" [label="fore_link"];
 "camera_link" [label="camera_link"];
 "hand_palm_link" [label="hand_palm_link"];
 "hand_grasping_frame" [label="hand_grasping_frame"];
@@ -53,17 +51,13 @@ node [shape=ellipse, color=blue, fontcolor=blue];
 "fixed" -> "base_link"
 "base_link" -> "joint_base_mid" [label="xyz: 0 0.1 0.95 \nrpy: 0 -0 0"]
 "joint_base_mid" -> "mid_link"
-"mid_link" -> "joint_mid_top" [label="xyz: 0 0.1 0.4 \nrpy: 0 -0 0"]
-"joint_mid_top" -> "ball_link"
-"ball_link" -> "joint_mid_top_psi" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
-"joint_mid_top_psi" -> "ball_link_psi_link"
-"ball_link_psi_link" -> "joint_mid_top_theta" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
-"joint_mid_top_theta" -> "ball_link_theta_link"
-"ball_link_theta_link" -> "joint_mid_top__phi" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
-"joint_mid_top__phi" -> "top_link"
-"top_link" -> "camera_joint" [label="xyz: 0 0 0.4 \nrpy: 0 1.5708 -1.57"]
+"mid_link" -> "joint_mid_top" [label="xyz: 0 0 0.5 \nrpy: 0 -0 0"]
+"joint_mid_top" -> "top_link"
+"top_link" -> "joint_top_fore" [label="xyz: 0.45 0 0 \nrpy: 0 -0 0"]
+"joint_top_fore" -> "fore_link"
+"fore_link" -> "camera_joint" [label="xyz: 0.45 0 0 \nrpy: 0 -0 0"]
 "camera_joint" -> "camera_link"
-"top_link" -> "hand_palm_joint" [label="xyz: 0 0 0.45 \nrpy: 0 -1.5708 0"]
+"fore_link" -> "hand_palm_joint" [label="xyz: 0.5 0 0 \nrpy: -1.57 0 0"]
 "hand_palm_joint" -> "hand_palm_link"
 "hand_palm_link" -> "hand_grasping_fixed_joint" [label="xyz: 0.13 0.02 0 \nrpy: 0 -0 0"]
 "hand_grasping_fixed_joint" -> "hand_grasping_frame"
@@ -139,8 +133,8 @@ node [shape=ellipse, color=blue, fontcolor=blue];
 "hand_thumb_flex_2_joint" -> "hand_thumb_flex_2_link"
 "hand_palm_link" -> "hand_thumb_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
 "hand_thumb_joint" -> "hand_thumb_link"
-"top_link" -> "hand_safety_box_joint" [label="xyz: 0 0 0.45 \nrpy: 0 -1.5708 0"]
+"fore_link" -> "hand_safety_box_joint" [label="xyz: 0.5 0 0 \nrpy: -1.57 0 0"]
 "hand_safety_box_joint" -> "hand_safety_box"
-"top_link" -> "hand_tool_joint" [label="xyz: 0 0 0.45 \nrpy: 0 -1.5708 0"]
+"fore_link" -> "hand_tool_joint" [label="xyz: 0.5 0 0 \nrpy: -1.57 0 0"]
 "hand_tool_joint" -> "hand_tool_link"
 }

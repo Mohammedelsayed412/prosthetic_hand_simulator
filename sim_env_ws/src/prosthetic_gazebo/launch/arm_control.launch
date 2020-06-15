@@ -7,9 +7,8 @@
   <node name="control_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/arm_stand" 
   args="joint_state_controller
         joint_base_mid_position_controller
-        joint_mid_top_psi_position_controller
-        joint_mid_top_theta_position_controller
-        joint_mid_top_phi_position_controller"/>
+        joint_mid_top_position_controller
+        joint_top_fore_position_controller"/>
         
   <!-- convert joint states to TF transforms for rviz, etc -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
