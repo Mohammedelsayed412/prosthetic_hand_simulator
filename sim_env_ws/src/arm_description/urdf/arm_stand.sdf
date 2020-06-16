@@ -98,9 +98,8 @@
           </script>
         </material>
       </visual>
-      <gravity>1</gravity>
-      <velocity_decay/>
       <gravity>0</gravity>
+      <velocity_decay/>
     </link>
     <joint name='joint_base_mid' type='revolute'>
       <child>mid_link</child>
@@ -169,9 +168,8 @@
           </script>
         </material>
       </visual>
-      <gravity>1</gravity>
-      <velocity_decay/>
       <gravity>0</gravity>
+      <velocity_decay/>
     </link>
     <joint name='joint_mid_top' type='revolute'>
       <child>top_link</child>
@@ -196,15 +194,15 @@
     <link name='fore_link'>
       <pose frame=''>0.45 0.1 1.45 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0.339767 0.000599 0.000629 0 -0 0</pose>
-        <mass>1.40021</mass>
+        <pose frame=''>0.339766 0.000599 0.000629 0 -0 0</pose>
+        <mass>1.4002</mass>
         <inertia>
-          <ixx>0.000418743</ixx>
+          <ixx>0.000417743</ixx>
           <ixy>-0.000172977</ixy>
-          <ixz>-0.000202588</ixz>
-          <iyy>0.0497951</iyy>
+          <ixz>-0.000202589</ixz>
+          <iyy>0.0497939</iyy>
           <iyz>-9.06625e-06</iyz>
-          <izz>0.049951</izz>
+          <izz>0.0499499</izz>
         </inertia>
       </inertial>
       <collision name='fore_link_collision'>
@@ -226,23 +224,7 @@
           </friction>
         </surface>
       </collision>
-      <collision name='fore_link_fixed_joint_lump__camera_link_collision_1'>
-        <pose frame=''>0.45 0 0.075 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.05 0.05 0.05</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <collision name='fore_link_fixed_joint_lump__hand_palm_link_collision_2'>
+      <collision name='fore_link_fixed_joint_lump__hand_palm_link_collision_1'>
         <pose frame=''>0.5 0 0 -1.57 0 0</pose>
         <geometry>
           <mesh>
@@ -259,13 +241,21 @@
           </friction>
         </surface>
       </collision>
-      <collision name='fore_link_fixed_joint_lump__hand_safety_box_collision_3'>
+      <collision name='fore_link_fixed_joint_lump__hand_safety_box_collision_2'>
         <pose frame=''>0.5 0 0 -1.57 0 0</pose>
         <geometry>
           <box>
             <size>0.2 0.115 0.18</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='fore_link_visual'>
         <pose frame=''>0.25 0 0 0 -0 0</pose>
@@ -281,21 +271,7 @@
           </script>
         </material>
       </visual>
-      <visual name='fore_link_fixed_joint_lump__camera_link_visual_1'>
-        <pose frame=''>0.45 0 0.075 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.05 0.05 0.05</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>__default__</uri>
-            <name>__default__</name>
-          </script>
-        </material>
-      </visual>
-      <visual name='fore_link_fixed_joint_lump__hand_palm_link_visual_2'>
+      <visual name='fore_link_fixed_joint_lump__hand_palm_link_visual_1'>
         <pose frame=''>0.5 0 0 -1.57 0 0</pose>
         <geometry>
           <mesh>
@@ -312,7 +288,77 @@
       </visual>
       <velocity_decay/>
       <velocity_decay/>
+      <velocity_decay/>
+      <velocity_decay/>
       <gravity>0</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='joint_top_fore' type='revolute'>
+      <child>fore_link</child>
+      <parent>top_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+          <effort>1000</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='camera_link'>
+      <pose frame=''>0.9 0.1 1.45 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1e-05</mass>
+        <inertia>
+          <ixx>1e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='camera_link_collision'>
+        <pose frame=''>0 0 0.075 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='camera_link_visual'>
+        <pose frame=''>0 0 0.075 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
       <sensor name='camera1' type='camera'>
         <update_rate>30</update_rate>
         <camera name='camera1'>
@@ -346,30 +392,31 @@
           <distortionT1>0.0</distortionT1>
           <distortionT2>0.0</distortionT2>
         </plugin>
-        <pose frame=''>0.45 0 0 0 -0 0</pose>
       </sensor>
-      <gravity>1</gravity>
-      <velocity_decay/>
     </link>
-    <joint name='joint_top_fore' type='revolute'>
-      <child>fore_link</child>
-      <parent>top_link</parent>
+    <joint name='camera_joint' type='fixed'>
+      <child>camera_link</child>
+      <parent>fore_link</parent>
       <axis>
-        <xyz>1 0 0</xyz>
-        <limit>
-          <lower>-3.14</lower>
-          <upper>3.14</upper>
-          <effort>1000</effort>
-          <velocity>0.5</velocity>
-        </limit>
         <dynamics>
-          <damping>0.7</damping>
-          <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
       </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='hand_index_abd_link'>
       <pose frame=''>1.0765 0.126503 1.44582 -3.1409 -0.000398 0.523599</pose>
