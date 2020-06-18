@@ -5,7 +5,7 @@
 
 `catkin_make`
 
-`source devel/setup.sh`
+`echo "source devel/setup.bash" >> ~/.bashrc`
 
 `chmod +x src/prosthetic_gazebo/scripts/subscriber_image.py`
 

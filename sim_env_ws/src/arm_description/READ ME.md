@@ -8,8 +8,11 @@ sudo apt-get install ros-melodic-gazebo-msgs ros-melodic-gazebo-plugins
 ```
 # Commands
 ```bash
+cd sim_env_ws
+catkin_make
+source devel/setup.bash
 roslaunch prosthetic_gazebo arm_gazebo.launch
-roslaunch prosthetic_gazebo arm_control.launch
+roslaunch arm_control arm_control.launch
 ```
 * **UN-PAUSE SIMULATION FROM GAZEBO GUI**
 
