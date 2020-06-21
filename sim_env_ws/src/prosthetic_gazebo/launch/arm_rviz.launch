@@ -1,7 +1,7 @@
 <launch>
   <!-- set parameter on Parameter Server -->
   <param name="robot_description" command="rosrun xacro xacro
-'$(find arm_description)/urdf/arm_stand.urdf.xacro'" />
+'$(find arm_description)/urdf/arm_stand_rviz.urdf.xacro'" />
 
   <!-- Start Joint state publisher node which will publish the joint values -->
   <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui"

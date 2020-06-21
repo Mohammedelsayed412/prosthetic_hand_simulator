@@ -11,6 +11,13 @@ sudo apt-get install ros-melodic-gazebo-msgs ros-melodic-gazebo-plugins
 cd sim_env_ws
 catkin_make
 source devel/setup.bash
+```
+## To run arm in Rviz with GUI joint controllers
+```bash
+roslaunch prosthetic_gazebo arm_rviz.launch
+```
+## To run arm in gazebo
+```bash
 roslaunch prosthetic_gazebo arm_gazebo.launch
 roslaunch arm_control arm_control.launch
 ```
