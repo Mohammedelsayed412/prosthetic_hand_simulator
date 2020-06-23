@@ -2,8 +2,6 @@
   <!-- Load joint controller configurations from YAML file to parameter server -->
   <rosparam command="load" file="$(find arm_control)/config/arm_stand_control.yaml"/>
   <rosparam command="load" file="$(find joint_state_controller)/joint_state_controller.yaml" />
-  <!--<rosparam command="load" file="$(find arm_control)/config/hand_joint_trajectory_controllers.yaml" />-->
-  <rosparam command="load" file="$(find arm_control)/config/hand_pids.yaml" />
   
   <!-- load the controllers -->
   <node name="control_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/arm_stand" 
@@ -11,7 +9,42 @@
         joint_base_mid_position_controller
         joint_mid_top_position_controller
         joint_top_fore_position_controller
-        hand_controller"/>
+        hand_index_joint_controller
+        hand_thumb_joint_controller
+        hand_mrl_joint_controller
+        hand_index_abd_joint_controller
+        hand_index_virtual_1_joint_controller
+        hand_index_virtual_2_joint_controller
+        hand_index_virtual_3_joint_controller
+        hand_index_flex_1_joint_controller
+        hand_index_flex_2_joint_controller
+        hand_index_flex_3_joint_controller
+        hand_little_abd_joint_controller
+        hand_little_virtual_1_joint_controller
+        hand_little_virtual_2_joint_controller
+        hand_little_virtual_3_joint_controller
+        hand_little_flex_1_joint_controller
+        hand_little_flex_2_joint_controller
+        hand_little_flex_3_joint_controller
+        hand_middle_abd_joint_controller
+        hand_middle_virtual_1_joint_controller
+        hand_middle_virtual_2_joint_controller
+        hand_middle_virtual_3_joint_controller
+        hand_middle_flex_1_joint_controller
+        hand_middle_flex_2_joint_controller
+        hand_middle_flex_3_joint_controller
+        hand_ring_abd_joint_controller
+        hand_ring_virtual_1_joint_controller
+        hand_ring_virtual_2_joint_controller
+        hand_ring_virtual_3_joint_controller
+        hand_ring_flex_1_joint_controller
+        hand_ring_flex_2_joint_controller
+        hand_ring_flex_3_joint_controller
+        hand_thumb_abd_joint_controller
+        hand_thumb_virtual_1_joint_controller
+        hand_thumb_virtual_2_joint_controller
+        hand_thumb_flex_1_joint_controller
+        hand_thumb_flex_2_joint_controller"/>
         
   <!-- convert joint states to TF transforms for rviz, etc -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
