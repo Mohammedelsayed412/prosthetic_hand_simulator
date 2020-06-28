@@ -30,6 +30,9 @@ rostopic pub -1 /arm_stand/joint_base_mid_position_controller/command std_msgs/F
 rostopic pub -1 /arm_stand/joint_top_fore_position_controller/command std_msgs/Float64 "data: 1.57"
 
 ```
+## Errors
+1. Gazebo [Err] [REST.cc:205] Error in REST request => solution : open this file( ignition/fuel/config.yaml) and replace( url: https://api.ignitionfuel.org) by url: https://api.ignitionrobotics.org
+
 # To check parsing of urdf file and look at links/joints tree
 ```bash
 cd "sim_env_ws/src/arm_description/urdf/"
