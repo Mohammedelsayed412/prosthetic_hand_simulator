@@ -5,6 +5,7 @@ sudo apt-get install ros-melodic-joint-state-publisher-gui => to install joint_s
 sudo apt-get install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control ros-melodic-ros-control ros-melodic-ros-controllers
 sudo apt-get install ros-melodic-gazebo-msgs ros-melodic-gazebo-plugins 
 sudo apt-get install ros-melodic-robot-state-publisher
+sudo apt-get install ros-melodic-rviz
 ```
 # Commands
 ```bash
