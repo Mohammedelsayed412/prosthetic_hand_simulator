@@ -4,6 +4,7 @@ sudo apt-get update
 sudo apt-get install ros-melodic-joint-state-publisher-gui => to install joint_state_publisher_gui
 sudo apt-get install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control ros-melodic-ros-control ros-melodic-ros-controllers
 sudo apt-get install ros-melodic-gazebo-msgs ros-melodic-gazebo-plugins 
+sudo apt-get install ros-melodic-moveit
 
 ```
 # Commands
@@ -51,6 +52,29 @@ urdf_to_graphiz arm_stand.urdf
       <origin xyz="${height3} 0 0" rpy="-1.57 0 0"/>
       <!--<origin xyz="0.1 0.02 ${reflect * 0.02}" rpy="0 0 0"/>-->
     </joint>
+
+    <link name="${name}_safety_box">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.0001" />
+        <inertia ixx="0.0001"  ixy="0"  ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+      </inertial>
+      <!--
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.2 0.115 0.18" />
+        </geometry>
+      </visual>
+      -->
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.02 0.0115 0.018" />
+          <!--it was: <box size="0.2 0.115 0.18" /> -->
+        </geometry>
+      </collision>
+    </link>
 ```
 # Changes in "src/tiago_description_complete/hey5_description/urdf/actuators.urdf.xacro" 
 ```xml

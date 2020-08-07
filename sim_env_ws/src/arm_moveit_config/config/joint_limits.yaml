@@ -1,0 +1,199 @@
+# joint_limits.yaml allows the dynamics properties specified in the URDF to be overwritten or augmented as needed
+# Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
+# Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
+joint_limits:
+  hand_index_abd_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_index_flex_1_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_index_flex_2_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_index_flex_3_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_index_joint:
+    has_velocity_limits: true
+    max_velocity: 3.35
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_index_virtual_1_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_index_virtual_2_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_index_virtual_3_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_little_abd_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_little_flex_1_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_little_flex_2_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_little_flex_3_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_little_virtual_1_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_little_virtual_2_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_little_virtual_3_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_middle_abd_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_middle_flex_1_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_middle_flex_2_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_middle_flex_3_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_middle_virtual_1_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_middle_virtual_2_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_middle_virtual_3_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_mrl_joint:
+    has_velocity_limits: true
+    max_velocity: 3.56
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_ring_abd_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_ring_flex_1_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_ring_flex_2_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_ring_flex_3_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_ring_virtual_1_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_ring_virtual_2_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_ring_virtual_3_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_thumb_abd_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_thumb_flex_1_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_thumb_flex_2_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_thumb_joint:
+    has_velocity_limits: true
+    max_velocity: 3.35
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_thumb_virtual_1_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  hand_thumb_virtual_2_joint:
+    has_velocity_limits: true
+    max_velocity: 2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  joint_base_mid:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  joint_mid_top:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  joint_top_fore:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0

@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: arm_description
+    relative_path: urdf/arm_stand.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/arm_stand.srdf
+  CONFIG:
+    author_name: merna bibars
+    author_email: merna.bibars@gmail.com
+    generated_timestamp: 1596789757
