@@ -53,7 +53,6 @@
     </group>
     <group name="arm">
         <joint name="virtual_joint" />
-        <joint name="fixed" />
         <joint name="joint_base_mid" />
         <joint name="joint_mid_top" />
         <joint name="joint_top_fore" />
@@ -216,6 +215,44 @@
         <joint name="joint_base_mid" value="0" />
         <joint name="joint_mid_top" value="0" />
         <joint name="joint_top_fore" value="0" />
+    </group_state>
+    <group_state name="relaxed_hand" group="hand">
+        <joint name="hand_index_abd_joint" value="0" />
+        <joint name="hand_index_flex_1_joint" value="0" />
+        <joint name="hand_index_flex_2_joint" value="0" />
+        <joint name="hand_index_flex_3_joint" value="0" />
+        <joint name="hand_index_joint" value="0" />
+        <joint name="hand_index_virtual_1_joint" value="0" />
+        <joint name="hand_index_virtual_2_joint" value="0" />
+        <joint name="hand_index_virtual_3_joint" value="0" />
+        <joint name="hand_little_abd_joint" value="0" />
+        <joint name="hand_little_flex_1_joint" value="0" />
+        <joint name="hand_little_flex_2_joint" value="0" />
+        <joint name="hand_little_flex_3_joint" value="0" />
+        <joint name="hand_little_virtual_1_joint" value="0" />
+        <joint name="hand_little_virtual_2_joint" value="0" />
+        <joint name="hand_little_virtual_3_joint" value="0" />
+        <joint name="hand_middle_abd_joint" value="0" />
+        <joint name="hand_middle_flex_1_joint" value="0" />
+        <joint name="hand_middle_flex_2_joint" value="0" />
+        <joint name="hand_middle_flex_3_joint" value="0" />
+        <joint name="hand_middle_virtual_1_joint" value="0" />
+        <joint name="hand_middle_virtual_2_joint" value="0" />
+        <joint name="hand_middle_virtual_3_joint" value="0" />
+        <joint name="hand_mrl_joint" value="0" />
+        <joint name="hand_ring_abd_joint" value="0" />
+        <joint name="hand_ring_flex_1_joint" value="0" />
+        <joint name="hand_ring_flex_2_joint" value="0" />
+        <joint name="hand_ring_flex_3_joint" value="0" />
+        <joint name="hand_ring_virtual_1_joint" value="0" />
+        <joint name="hand_ring_virtual_2_joint" value="0" />
+        <joint name="hand_ring_virtual_3_joint" value="0" />
+        <joint name="hand_thumb_abd_joint" value="0" />
+        <joint name="hand_thumb_flex_1_joint" value="0" />
+        <joint name="hand_thumb_flex_2_joint" value="0" />
+        <joint name="hand_thumb_joint" value="0" />
+        <joint name="hand_thumb_virtual_1_joint" value="0" />
+        <joint name="hand_thumb_virtual_2_joint" value="0" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="hand" parent_link="fore_link" group="hand" parent_group="arm" />

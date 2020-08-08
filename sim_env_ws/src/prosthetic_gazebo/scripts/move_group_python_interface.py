@@ -26,7 +26,7 @@ scene = moveit_commander.PlanningSceneInterface()
 ## If you are using a different robot, change this value to the name of your robot
 ## arm planning group.
 ## This interface can be used to plan and execute motions:
-group_name = "arm"
+group_name = "hand"
 move_group = moveit_commander.MoveGroupCommander(group_name)
 
 ## Create a `DisplayTrajectory`_ ROS publisher which is used to display
@@ -64,7 +64,7 @@ print ""
 #pose_goal.position.y = 0.1
 #pose_goal.position.z = 0.4
 
-move_group.set_named_target("home")
+move_group.set_named_target("pinch")
 
 ## Now, we call the planner to compute the plan and execute it.
 plan = move_group.plan()
@@ -80,7 +80,7 @@ move_group.clear_pose_targets()
 ## ^^^^^^^^^^^^^^^^
 ## Use execute if you would like the robot to follow
 ## the plan that has already been computed:
-#move_group.execute(plan, wait=True)
+move_group.execute(plan, wait=True)
 
 ## **Note:** The robot's current joint state must be within some tolerance of the
 ## first waypoint in the `RobotTrajectory`_ or ``execute()`` will fail

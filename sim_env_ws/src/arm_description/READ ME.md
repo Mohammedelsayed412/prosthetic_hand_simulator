@@ -4,7 +4,11 @@ sudo apt-get update
 sudo apt-get install ros-melodic-joint-state-publisher-gui => to install joint_state_publisher_gui
 sudo apt-get install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control ros-melodic-ros-control ros-melodic-ros-controllers
 sudo apt-get install ros-melodic-gazebo-msgs ros-melodic-gazebo-plugins 
+sudo apt-get update
 sudo apt-get install ros-melodic-moveit
+sudo apt-get install ros-melodic-moveit-ros-visualization
+sudo apt-get install ros-melodic-rviz-visual-tools
+sudo apt-get dist-upgrade
 
 ```
 # Commands
