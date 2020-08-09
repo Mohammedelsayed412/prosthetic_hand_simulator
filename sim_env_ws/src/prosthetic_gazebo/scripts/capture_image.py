@@ -9,7 +9,7 @@ def keys():
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
         k = ord(getch.getch())
-        dic = {115:"start", 113:"quit"}    # 115-> s key, 113-> q key
+        dic = {115:"start", 113:"quit", 110:"neutral", 114:"pronated", 112:"pinch", 116:"tripod"}    # 115-> s key, 113-> q key # n, r, p, t
         try:
 	        rospy.loginfo(dic[k])
 	        pub.publish(dic[k]) 
