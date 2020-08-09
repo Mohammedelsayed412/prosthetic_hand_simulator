@@ -149,7 +149,8 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://hey5_description/meshes/finger_abd_collision.stl" scale="1 1 ${reflect}" />
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////11-->
+          <mesh filename="package://hey5_description/meshes/finger_abd_collision.stl" scale="0.01 0.01 ${reflect}" />
         </geometry>
       </collision>
     </link>
@@ -193,7 +194,8 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://hey5_description/meshes/thumb_abd_collision.stl" scale="1 ${reflect} 1" />
+        <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////11-->
+          <mesh filename="package://hey5_description/meshes/thumb_abd_collision.stl" scale="0.01 ${reflect} 0.01" />
         </geometry>
       </collision>
     </link>
@@ -284,7 +286,8 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://hey5_description/meshes/finger_flex_collision.stl" />
+        <!--//////////////////////////////////////////////////////////////////////////////////////////////nothing-->
+          <mesh filename="package://hey5_description/meshes/finger_flex_collision.stl" scale = "0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -330,7 +333,8 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://hey5_description/meshes/finger_flex_tip_collision.stl" />
+        <!--///////////////////////////////////////////////////////////////////////////////////////NOTHING-->
+          <mesh filename="package://hey5_description/meshes/finger_flex_tip_collision.stl" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>

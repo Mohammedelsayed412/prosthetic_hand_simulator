@@ -51,5 +51,4 @@
     <remap from="/joint_states" to="/arm_stand/joint_states" />
   </node>
 
-  
 </launch>

@@ -50,7 +50,7 @@
    
   <link name="world"/>
   
-  <joint name="fixed" type="fixed">
+  <joint name="virtual_joint" type="fixed">
     <parent link="world"/>
     <child link="base_link"/>
   </joint>

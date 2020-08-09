@@ -8,6 +8,7 @@
 `echo "source devel/setup.bash" >> ~/.bashrc`
 
 `chmod +x src/prosthetic_gazebo/scripts/subscriber_image.py`
+`chmod +x src/prosthetic_gazebo/scripts/capture_image.py`
 
 ## Run launch file
 
@@ -22,6 +23,11 @@ rosrun gazebo_ros spawn_model -file `echo $(rospack find prosthetic_gazebo)`/mod
 ```
 
 `rosrun prosthetic_gazebo subscriber_image.py`
+
+`rosrun prosthetic_gazebo capture_image.py`
+
+* Press **"s"** to **start**. i.e. Capture an image and send it to the subscriber. 
+* Press **"q"** to **quit**.
 
 
 ## Spawn camera
