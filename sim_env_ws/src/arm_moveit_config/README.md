@@ -1,3 +1,17 @@
+# Must install
+1. install getch library: `$ pip install getch` you can try this `$ pip install https://pypi.python.org/packages/source/g/getch/getch-1.0-python2.tar.gz` if you receive errors from the previous command.
+2. 
+```shell
+sudo apt-get update
+sudo apt-get install ros-melodic-moveit
+sudo apt-get install ros-melodic-moveit-ros-visualization
+sudo apt-get install ros-melodic-rviz-visual-tools
+sudo apt-get dist-upgrade
+
+sudo apt-get install ros-melodic-robot-state-publisher
+sudo apt-get install ros-melodic-rviz
+```
+
 # To adjust predefined poses and joint groups to be controlled
 ```shell
 roslaunch moveit_setup_assistant setup_assistant.launch
@@ -45,12 +59,11 @@ rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller
 2. Control using moveit and rviz gui
 ```shell
 roslaunch prosthetic_gazebo arm_gazebo.launch
-roslaunch arm_control arm_moveit_control.launch
-rosservice call /move_group/trajectory_execution/set_parameters "config:
-  doubles:
-    - {name: 'allowed_start_tolerance', value: 0.0}"
+roslaunch arm_control arm_moveit_control_rviz.launch
 ```
-3. sltns: either change PID parameters for hand like for arm in ros_controllers.yaml, or add goal constraint to each joint https://github.com/tu-darmstadt-ros-pkg/hector_tracker_gazebo/blob/master/hector_tracker_gazebo_ros_control/config/default_controllers.yaml#L42 in both joints in ros_controller.yaml, or do C++ code for control setting both ===> two erors goal_tolerance_violated and start position different
+3. Control using script
+
+3. sltns: either change PID parameters for hand like for arm in ros_controllers.yaml (failed), or add goal constraint to each joint https://github.com/tu-darmstadt-ros-pkg/hector_tracker_gazebo/blob/master/hector_tracker_gazebo_ros_control/config/default_controllers.yaml#L42 in both joints in ros_controller.yaml (failed), or do C++ code for control setting both ===> two erors goal_tolerance_violated and start position different
 
 
 
