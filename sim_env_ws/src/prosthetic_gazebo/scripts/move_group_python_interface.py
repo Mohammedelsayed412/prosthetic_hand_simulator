@@ -64,7 +64,7 @@ print ""
 #pose_goal.position.y = 0.1
 #pose_goal.position.z = 0.4
 
-move_group.set_named_target("tripod")
+move_group.set_named_target("pinch")
 
 ## Now, we call the planner to compute the plan and execute it.
 plan = move_group.plan()

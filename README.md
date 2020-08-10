@@ -59,7 +59,7 @@ roslaunch prosthetic_gazebo arm_gazebo.launch
 rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller
 ```
 2. Control using moveit and rviz gui
-```shell
+```shell 
 roslaunch prosthetic_gazebo arm_gazebo.launch
 roslaunch arm_control arm_moveit_control_rviz.launch
 ```
