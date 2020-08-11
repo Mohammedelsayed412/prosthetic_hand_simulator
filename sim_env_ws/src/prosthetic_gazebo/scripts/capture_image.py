@@ -14,7 +14,7 @@ def keys():
 	        rospy.loginfo(dic[k])
 	        pub.publish(dic[k]) 
         except KeyError:
-		rospy.loginfo("key not fount !!")
+		rospy.loginfo('key not found!')
                 
 if __name__=='__main__':
     try:

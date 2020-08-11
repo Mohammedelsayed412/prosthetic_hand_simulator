@@ -9,11 +9,11 @@ import geometry_msgs.msg
 
 ## First initialize `moveit_commander`_ and a `rospy`_ node:
 moveit_commander.roscpp_initialize(sys.argv)
-rospy.init_node('move_group_python_interface_tutorial', anonymous=True)
+rospy.init_node('move_group_python_interface', anonymous=True)
 
 ## Instantiate a `RobotCommander`_ object. Provides information such as the robot's
 ## kinematic model and the robot's current joint states
-robot = moveit_commander.RobotCommander()
+robot = moveit_commander.RobotCommander(ns="arm_stand")
 
 ## Instantiate a `PlanningSceneInterface`_ object.  This provides a remote interface
 ## for getting, setting, and updating the robot's internal understanding of the
@@ -72,7 +72,7 @@ plan = move_group.plan()
 #move_group.stop()
 # It is always good to clear your targets after planning with poses.
 # Note: there is no equivalent function for clear_joint_value_targets()
-move_group.clear_pose_targets()
+#move_group.clear_pose_targets()
 
 ## BEGIN_SUB_TUTORIAL execute_plan
 ##
@@ -80,10 +80,13 @@ move_group.clear_pose_targets()
 ## ^^^^^^^^^^^^^^^^
 ## Use execute if you would like the robot to follow
 ## the plan that has already been computed:
-move_group.execute(plan, wait=True)
+#move_group.execute(plan, wait=True)
 
 ## **Note:** The robot's current joint state must be within some tolerance of the
 ## first waypoint in the `RobotTrajectory`_ or ``execute()`` will fail
 
-rospy.sleep(5)
+rospy.sleep(2)
+
+move_group.go(wait=True)
+
 moveit_commander.roscpp_shutdown()

@@ -1,3 +1,17 @@
+# Must install
+1. install getch library: `$ pip install getch` you can try this `$ pip install https://pypi.python.org/packages/source/g/getch/getch-1.0-python2.tar.gz` if you receive errors from the previous command.
+2. 
+```shell
+sudo apt-get update
+sudo apt-get install ros-melodic-moveit
+sudo apt-get install ros-melodic-moveit-ros-visualization
+sudo apt-get install ros-melodic-rviz-visual-tools
+sudo apt-get dist-upgrade
+
+sudo apt-get install ros-melodic-robot-state-publisher
+sudo apt-get install ros-melodic-rviz
+```
+
 # To adjust predefined poses and joint groups to be controlled
 ```shell
 roslaunch moveit_setup_assistant setup_assistant.launch
@@ -12,7 +26,6 @@ roslaunch moveit_setup_assistant setup_assistant.launch
 
 # General moveit tutorials:
 1. Standard docs: https://ros-planning.github.io/moveit_tutorials/
-2. Connecting moveit to gazebo: 
 
 # Run commands:
 1. To show planning and execution in RVIZ and control using RVIZ GUI:
@@ -36,6 +49,9 @@ go relaxed_hand
 quit
 ```
 
+# ALWAYS UNPAUSE SIMULATION IN GAZEBO FIRST
+
+
 # Gazebo control
 1. Control using rqt_joint_controller_gui with moveit produced controllers:
 ```shell
@@ -45,12 +61,31 @@ rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller
 2. Control using moveit and rviz gui
 ```shell
 roslaunch prosthetic_gazebo arm_gazebo.launch
-roslaunch arm_control arm_moveit_control.launch
-rosservice call /move_group/trajectory_execution/set_parameters "config:
-  doubles:
-    - {name: 'allowed_start_tolerance', value: 0.0}"
+roslaunch arm_control arm_moveit_control_rviz.launch
 ```
-3. sltns: either change PID parameters for hand like for arm in ros_controllers.yaml, or add goal constraint to each joint https://github.com/tu-darmstadt-ros-pkg/hector_tracker_gazebo/blob/master/hector_tracker_gazebo_ros_control/config/default_controllers.yaml#L42 in both joints in ros_controller.yaml, or do C++ code for control setting both ===> two erors goal_tolerance_violated and start position different
+3. Control using script and change the group name or target pose in script
+```shell
+roslaunch prosthetic_gazebo arm_gazebo.launch
+roslaunch arm_control arm_moveit_control.launch
+rosrun prosthetic_gazebo move_group_python_interface.py
+```
+4. Control using keyboard: hand{'p':"pinch", 't':"tripod", 'n':"neutral", 'r':"relaxed_hand", 'o':"pronated"},arm{ 'h':"home", 'c':"capture", 'i':"initial", 'f':"final"}:
+```shell
+roslaunch prosthetic_gazebo arm_gazebo.launch
+roslaunch arm_control arm_moveit_control.launch
+rosrun prosthetic_gazebo move_group_py.py
+rosrun prosthetic_gazebo keyboard_publisher.py
+```
+# PROBLEMS: 
+* goal_tolerance_violated error (no soltn works some poses dont give this error others do)
+  ** sltns: either change PID parameters for hand like for arm in ros_controllers.yaml (failed), or add goal constraint to each joint https://github.com/tu-darmstadt-ros-pkg/hector_tracker_gazebo/blob/master/hector_tracker_gazebo_ros_control/config/default_controllers.yaml#L42 in both joints in ros_controller.yaml (failed), or do C++ code for control setting both ===> two erors goal_tolerance_violated and start position different
+* Keyboard control EXTREMELY SLOW and publisher subscriber model has a very large latency in sending and receiving orders causing one order to work and second one due to queueing suspends the system. Have to press same key a ton of times till the press is received by other side and so one order is received twice and 2nd time pauses entire system. sltn: maybe try action service model? bs 2na mosh 2adra
+* anticipating that when adding camera and neural network the whole system shuts down :'D
+
+# Remaining
+1. calculate the poses for arm and add them to the sdf file
+2. move arm_stand to table
+3. proportional control for the grasp :((((
 
 
 
