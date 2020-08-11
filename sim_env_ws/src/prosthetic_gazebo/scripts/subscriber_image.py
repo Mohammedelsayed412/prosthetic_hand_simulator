@@ -20,7 +20,7 @@ class cvBridgeDemo():
         self.bridge = CvBridge()
 
         # Subscribe to the camera image topics and set the appropriate callbacks
-        self.image_sub = rospy.Subscriber("/camera/color/image_raw", Image, self.image_callback)
+        self.image_sub = rospy.Subscriber("camera_img", Image, self.image_callback)
         self.trigger_sub = rospy.Subscriber("/teleop_key", String, self.flag_update)
         self.old_flag = "quit"
         self.flag = False
