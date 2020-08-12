@@ -7,6 +7,7 @@
   <xacro:property name="PI" value="3.1415926535897931"/>
   <xacro:property name="mass" value="1" />
   <xacro:property name="width" value="0.1" />
+  <xacro:property name="width3" value="0.15" />
   <xacro:property name="height1" value="1" />
   <xacro:property name="height2" value="0.5" />
   <xacro:property name="height3" value="0.5" />
@@ -150,14 +151,14 @@
     <visual>
       <origin xyz="${height3/2} 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="${height3} ${width} ${width}" />
+        <box size="${height3} ${width} ${width3}" />
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="${height3/2} 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="${height3} ${width} ${width}" />
+        <box size="${height3} ${width} ${width3}" />
       </geometry>
     </collision>
     <inertial>
@@ -179,14 +180,14 @@
    <!--Camera Link-->
   <link name="camera_link">
     <collision>
-      <origin xyz="0 0 ${camera_link + camera_link/2}" rpy="0 0 0"/>
+      <origin xyz="0 0 ${camera_link + camera_link/2 + 0.05/2}" rpy="0 0 0"/>
       <geometry>
         <box size="${camera_link} ${camera_link} ${camera_link}"/>
       </geometry>
     </collision>
 
     <visual>
-      <origin xyz="0 0 ${camera_link + camera_link/2}" rpy="0 0 0"/>
+      <origin xyz="0 0 ${camera_link + camera_link/2 +0.05/2}" rpy="0 0 0"/>
       <geometry>
         <box size="${camera_link} ${camera_link} ${camera_link}"/>
       </geometry>

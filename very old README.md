@@ -13,13 +13,13 @@
 ## Run launch file
 
 `
-roslaunch prosthetic_gazebo sim_env.launch
+roslaunch prosthetic_gazebo arm_gazebo.launch
 `
 
 ## Spawn kinect and run subscriber
 
 ```
-rosrun gazebo_ros spawn_model -file `echo $(rospack find prosthetic_gazebo)`/models/kinect/model.sdf -sdf -model kinect -y 0 -x -0.5 -z 0.913
+rosrun gazebo_ros spawn_model -file `echo $(rospack find prosthetic_gazebo)`/models/kinect/model.sdf -sdf -model kinect -y 0 -x 0.4 -z 0.913
 ```
 
 `rosrun prosthetic_gazebo subscriber_image.py`
@@ -33,7 +33,7 @@ rosrun gazebo_ros spawn_model -file `echo $(rospack find prosthetic_gazebo)`/mod
 ## Spawn camera
 
 ```
-rosrun gazebo_ros spawn_model -file `echo $(rospack find prosthetic_gazebo)`/models/camera/Camera_model.sdf -sdf -model camera -y 0 -x -0.8 -z 0.913
+rosrun gazebo_ros spawn_model -file `echo $(rospack find prosthetic_gazebo)`/models/camera/Camera_model.sdf -sdf -model camera -y 0 -x -0.4 -z 0.913
 ```
 
 ## Insert, delete and modify objects 
