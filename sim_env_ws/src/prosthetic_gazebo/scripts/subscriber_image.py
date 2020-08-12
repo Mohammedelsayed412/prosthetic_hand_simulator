@@ -3,6 +3,10 @@ import roslib
 import rospy
 import sys
 import cv2 as cv
+import base64
+import json
+from PIL import Image
+from io import StringIO,BytesIO 
 from sensor_msgs.msg import Image, CameraInfo
 from std_msgs.msg import String
 from cv_bridge import CvBridge, CvBridgeError
@@ -48,10 +52,14 @@ class cvBridgeDemo():
                 rospy.loginfo("Exception found ! ! !")
                 print e
             
-            # Saving the image
-            rospy.loginfo("saving image")
-            cv.imwrite('captured_img.jpg', frame)
-            rospy.loginfo("image saved successfully in your work space named captured_img.jpg")
+            # initializing IP adress to send request
+            addr = 'http://localhost:4000'  ## the API adress
+            url = addr + '/api/model/'
+            retval, buffer = cv.imencode('.jpg', frame) #Encoding CV format to JPG
+            data = base64.b64encode(buffer) #Serializing Image to Base64
+            ## sending request
+            request = requests.post(url, json={'img_base64':data})
+            rospy.loginfo("Image Sent to Server")
             self.flag = False
         
 
