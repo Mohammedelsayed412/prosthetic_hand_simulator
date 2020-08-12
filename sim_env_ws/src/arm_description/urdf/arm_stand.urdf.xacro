@@ -11,7 +11,7 @@
   <xacro:property name="height2" value="0.5" />
   <xacro:property name="height3" value="0.5" />
   <xacro:property name="axle_offset" value="0.05" />
-  <xacro:property name="damp" value="0.7" />
+  <xacro:property name="damp" value="0.1" /> <!--0.7 damp and vel limit 0.5-->
   <xacro:property name="friction" value="0" />
   <xacro:property name="camera_link" value="0.05" /> 
   <!-- Size of square 'camera' box -->
@@ -80,7 +80,7 @@
     <origin xyz="0 ${width} ${height1 - axle_offset}" rpy="0 0 0"/>
     <axis xyz="0 1 0" />
     <dynamics damping="${damp}" friction = "${friction}" />
-    <limit effort="1000.0" velocity="0.5" lower="-3.14" upper="3.14"/>
+    <limit effort="1000.0" velocity="1" lower="-3.14" upper="3.14"/>
   </joint>
   
   <!-- Middle Link -->
@@ -109,7 +109,7 @@
     <origin xyz="0 0 ${height2}" rpy="0 0 0"/>
     <axis xyz="0 0 1" />
     <dynamics damping="${damp}" friction = "${friction}" />
-    <limit effort="1000.0" velocity="0.5" lower="-3.14" upper="3.14"/>
+    <limit effort="1000.0" velocity="1" lower="-3.14" upper="3.14"/>
   </joint>
   
   <!-- Top Link -->
@@ -143,7 +143,7 @@
     <origin xyz="${height3 - axle_offset} 0 0" rpy="0 0 0"/>
     <axis xyz="1 0 0" />
     <dynamics damping="${damp}" friction = "${friction}" />
-    <limit effort="1000.0" velocity="0.5" lower="-3.14" upper="3.14"/>
+    <limit effort="1000.0" velocity="1" lower="-3.14" upper="3.14"/>
   </joint>
   
   <link name="fore_link">
