@@ -10,7 +10,7 @@ import numpy as np
 
 class cvBridgeDemo():
     def __init__(self):
-        self.node_name = "saving_image"
+        self.node_name = "saving image"
         rospy.init_node(self.node_name)
         
         # What we do during shutdown
