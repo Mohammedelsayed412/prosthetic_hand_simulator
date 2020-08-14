@@ -76,19 +76,6 @@ roslaunch arm_control arm_moveit_control.launch
 rosrun prosthetic_gazebo move_group_py.py
 rosrun prosthetic_gazebo keyboard_publisher.py
 ```
-# PROBLEMS: 
-* goal_tolerance_violated error (no soltn works some poses dont give this error others do)
-  ** sltns: either change PID parameters for hand like for arm in ros_controllers.yaml (failed), or add goal constraint to each joint https://github.com/tu-darmstadt-ros-pkg/hector_tracker_gazebo/blob/master/hector_tracker_gazebo_ros_control/config/default_controllers.yaml#L42 in both joints in ros_controller.yaml (failed), or do C++ code for control setting both ===> two erors goal_tolerance_violated and start position different
-* Keyboard control EXTREMELY SLOW and publisher subscriber model has a very large latency in sending and receiving orders causing one order to work and second one due to queueing suspends the system. Have to press same key a ton of times till the press is received by other side and so one order is received twice and 2nd time pauses entire system. sltn: maybe try action service model? bs 2na mosh 2adra
-* anticipating that when adding camera and neural network the whole system shuts down :'D
-
-# Remaining
-1. calculate the poses for arm and add them to the sdf file
-2. move arm_stand to table
-3. proportional control for the grasp :((((
-
-
-
 
 # Gazebo connection
 1.by following this tutorial: https://github.com/tahsinkose/moveit_tutorials/commit/abce82e6a6040cb975b871389f23d5e95b4c2211 but for the movit_config package the ros_controllers.yaml config file edited to: (add arm_stand namespace)
@@ -295,9 +282,19 @@ controller_list:
 ```
 3. Made a new launch file in arm_control package called arm_moveit_control.launch to launch moveit control.
 
-
-# Problems 
+# Problems and solutions
 1. tiago hand joint values causes robot to be always in collision. Soltn: scaling all collision element geometry mesh tag to 0.02 0.02 tiago_description package hand urdf files. 
 2. Could not find the planner configuration 'None' on the param server. Soltn: https://answers.ros.org/question/344106/could-not-find-the-planner-configuration-none-on-the-param-server/
 3. No active joints or end effectors found for group 'hand'. Make sure that kinematics.yaml is loaded in this node's namespace. Soltn: Maybe change hand group to chain and use KDLkinematics solver --> didnt try it
-4. Gazebo connection with rviz problems: 1. goal tolerance violated and 2. drift of joints in gazebo from position in rviz causes plans execution failure ==> **NO SOLUTION**
+
+
+# PROBLEMS: 
+* goal_tolerance_violated error (no soltn works some poses dont give this error others do)
+  ** sltns: either change PID parameters for hand like for arm in ros_controllers.yaml (failed), or add goal constraint to each joint https://github.com/tu-darmstadt-ros-pkg/hector_tracker_gazebo/blob/master/hector_tracker_gazebo_ros_control/config/default_controllers.yaml#L42 in both joints in ros_controller.yaml (failed), or do C++ code for control setting both ===> two erors goal_tolerance_violated and start position different
+* Keyboard control EXTREMELY SLOW and publisher subscriber model has a very large latency in sending and receiving orders causing one order to work and second one due to queueing suspends the system. Have to press same key a ton of times till the press is received by other side and so one order is received twice and 2nd time pauses entire system. sltn: maybe try action service model? bs 2na mosh 2adra
+* anticipating that when adding camera and neural network the whole system shuts down :'D
+
+# Remaining
+1. calculate the poses for arm and add them to the sdf file
+2. move arm_stand to table
+3. proportional control for the grasp :((((
