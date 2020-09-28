@@ -75,7 +75,7 @@ rosservice call gazebo/delete_model '{model_name: realsense_camera}'
 
 ## To start Gazebo simulation GUI with our new world 
 ```bash
-roslaunch prosthetic_gazebo write_world_name.launch
+roslaunch arm_gazebo write_world_name.launch
 ```
 
 # Errors
