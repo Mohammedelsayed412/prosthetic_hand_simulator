@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="realsense_camera">
+    <pose frame="">-0.4 0 0.9 -1.5707 0 1.5707</pose>
+    <link name="link">
+      <inertial>
+	      <pose frame=''>0 0 0 0 0 0</pose>
+        <mass>0.2</mass>
+        <inertia>
+          <ixx>0.000028889</ixx>
+          <iyy>0.000028889</iyy>
+          <izz>0.000028889</izz>
+        </inertia>
+      </inertial>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.0305</radius>
+            <length>0.026</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0305</radius>
+            <length>0.026</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <sensor name ="depth" type ="depth">
+        <pose>0 0 0.0305 1.5707 1.5707 0</pose> 
+        <update_rate>30.0</update_rate>
+        <visualize>0</visualize>
+        <camera>
+          <horizontal_fov>1.22173</horizontal_fov>
+          <image>
+            <width>1024</width>
+            <height>768</height>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>3.0</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <plugin name="depth_plugin" filename="libgazebo_ros_openni_kinect.so">
+          <baseline>0.2</baseline>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>30.0</updateRate>
+          <cameraName>depth_ir</cameraName>
+          <imageTopicName>/depth/color/image_raw</imageTopicName>
+          <cameraInfoTopicName>/depth/color/camera_info</cameraInfoTopicName>
+          <depthImageTopicName>/depth/depth/image_raw</depthImageTopicName>
+          <depthImageCameraInfoTopicName>/depth/depth/camera_info</depthImageCameraInfoTopicName>
+          <pointCloudTopicName>/depth/depth/points</pointCloudTopicName>
+          <frameName>depth_link</frameName>
+          <pointCloudCutoff>0.05</pointCloudCutoff>
+          <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+	        <distortionK1>0</distortionK1>
+          <distortionK2>0</distortionK2>
+          <distortionK3>0</distortionK3>
+          <distortionT1>0</distortionT1>
+          <distortionT2>0</distortionT2>
+          <CxPrime>0</CxPrime>
+          <Cx>0</Cx>
+          <Cy>0</Cy>
+          <focalLength>0</focalLength>
+          <hackBaseline>0</hackBaseline>
+        </plugin>
+      </sensor>   
+    </link>
+  </model>
+</sdf>

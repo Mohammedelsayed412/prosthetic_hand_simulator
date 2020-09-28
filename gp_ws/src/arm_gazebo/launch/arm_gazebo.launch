@@ -1,0 +1,28 @@
+<launch>
+  <arg name="gui" default="true"/>
+  <arg name="start_gazebo" default="true"/>
+  <arg name="limited" default="false"/>
+  <arg name="paused" default="true"/>
+  <arg name="gzweb" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="gzpose" default="-x -2 -y -2 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
+  <!-- We resume the logic in gazebo_ros package empty_world.launch,
+  changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="verbose" value="$(arg verbose)"/>
+  </include>
+  
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description"
+    command="rosrun xacro xacro '$(find arm_dsc)/urdf/arm_stand.urdf.xacro'" />
+    
+  <!-- Spawn into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" 
+  output="screen" args="-urdf -param robot_description $(arg gzpose) -model arm" />
+
+  <include file="$(find arm_ctrl)/launch/arm_control.launch"/>
+
+</launch>

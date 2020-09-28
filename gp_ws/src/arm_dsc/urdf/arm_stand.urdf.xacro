@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<!-- Revolute-Revolute Manipulator -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm_stand">
+  
+  <!-- Constants for robot dimensions -->
+  <xacro:property name="PI" value="3.1415926535897931"/>
+  <xacro:property name="mass" value="1" />
+  <xacro:property name="width" value="0.1" />
+  <xacro:property name="width3" value="0.15" />
+  <xacro:property name="height1" value="1" />
+  <xacro:property name="height2" value="0.5" />
+  <xacro:property name="height3" value="0.5" />
+  <xacro:property name="axle_offset" value="0.05" />
+  <xacro:property name="damp" value="0.1" /> <!--0.7 damp and vel limit 0.5-->
+  <xacro:property name="friction" value="0" />
+
+  <!-- Default Inertial -->
+  <xacro:macro name="default_inertial" params="z_value height mass width">
+    <inertial>
+      <origin xyz="0 0 ${z_value}" rpy="0 0 0"/>
+      <mass value="${mass}"/>
+      <inertia ixx="${mass / 12.0 * (width*width + height*height)}" ixy="0.0" ixz="0.0"
+               iyy="${mass / 12.0 * (height*height + width*width)}" iyz="0.0"
+               izz="${mass / 12.0 * (width*width + width*width)}" />
+    </inertial>
+  </xacro:macro>
+  
+  <!-- Import Rviz colors -->
+  <xacro:include
+      filename="$(find arm_dsc)/urdf/materials.urdf.xacro" />
+  
+  <!-- Include Gazebo tags -->
+  <xacro:include filename="$(find arm_dsc)/gazebo/arm_stand_gazebo.urdf.xacro"/>
+  
+  <!--Arm Stand-->
+   
+  <link name="world"/>
+  
+  <joint name="virtual_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+  
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 ${height1/2}" rpy="0 0 0" />
+      <geometry>
+        <box size="${width} ${width} ${height1}" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${height1/2}" rpy="0 0 0" />
+      <geometry>
+        <box size="${width} ${width} ${height1}" />
+      </geometry>
+    </collision>
+    <xacro:default_inertial z_value="${height1/2}" height="${height1}" mass="${mass}" width = "${width}"/>
+  </link>
+  
+  <!-- Joint between Base Link and Middle Link -->
+  <joint name="joint_base_mid" type="revolute">
+    <parent link="base_link" />
+    <child link="mid_link" />
+    <origin xyz="0 ${width} ${height1 - axle_offset}" rpy="0 0 0"/>
+    <axis xyz="0 1 0" />
+    <dynamics damping="${damp}" friction = "${friction}" />
+    <limit effort="1000.0" velocity="1" lower="-3.14" upper="3.14"/>
+  </joint>
+  
+  <!-- Middle Link -->
+  <link name="mid_link">
+    <visual>
+      <origin xyz="0 0 ${height2/2 - axle_offset}" rpy="0 0 0" />
+      <geometry>
+        <box size="${width} ${width} ${height2}" />
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${height2/2 - axle_offset}" rpy="0 0 0" />
+      <geometry>
+        <box size="${width} ${width} ${height2}" />
+      </geometry>
+    </collision>
+    <xacro:default_inertial z_value="${height2/2 - axle_offset}" 
+    height="${height2}" mass="${mass}" width = "${width}"/>
+  </link>
+  
+  <!-- Joint between Middle Link and Top Link -->
+  <joint name="joint_mid_top" type="revolute">
+    <parent link="mid_link" />
+    <child link="top_link" />
+    <origin xyz="0 0 ${height2}" rpy="0 0 0"/>
+    <axis xyz="0 0 1" />
+    <dynamics damping="${damp}" friction = "${friction}" />
+    <limit effort="1000.0" velocity="1" lower="-3.14" upper="3.14"/>
+  </joint>
+  
+  <!-- Top Link -->
+  <link name="top_link">
+    <visual>
+      <origin xyz="${height3/2 - axle_offset} 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${height3} ${width} ${width}" />
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="${height3/2 - axle_offset} 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${height3} ${width} ${width}" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="${height3/2 - axle_offset} 0 0" rpy="0 0 0"/>
+      <mass value="${mass}"/>
+      <inertia ixx="${0.0833333 * mass * (0 + 0)}" ixy="0.0" ixz="0.0"
+        iyy="${0.0833333 * mass * (height3)*(height3)}" iyz="0.0"
+        izz="${0.0833333 * mass * (height3)*(height3)}" />
+    </inertial>
+  </link>
+
+  <!-- Joint between Top Link and Forearm Link -->
+  <joint name="joint_top_fore" type="revolute">
+    <parent link="top_link" />
+    <child link="fore_link" />
+    <origin xyz="${height3 - axle_offset} 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <dynamics damping="${damp}" friction = "${friction}" />
+    <limit effort="1000.0" velocity="1" lower="-3.14" upper="3.14"/>
+  </joint>
+  
+  <link name="fore_link">
+    <visual>
+      <origin xyz="${height3/2} 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${height3} ${width} ${width3}" />
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="${height3/2} 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${height3} ${width} ${width3}" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="${height3/2} 0 0" rpy="0 0 0"/>
+      <mass value="${mass}"/>
+      <inertia ixx="${0.0833333 * mass * (0 + 0)}" ixy="0.0" ixz="0.0"
+        iyy="${0.0833333 * mass * (height3)*(height3)}" iyz="0.0"
+        izz="${0.0833333 * mass * (height3)*(height3)}" />
+    </inertial>
+  </link>
+  
+  <!--Transmission-->
+  
+  <transmission name="trans_base_mid">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_base_mid">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_base_mid">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <transmission name="trans_mid_top">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_mid_top">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_mid_top">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>  
+  
+  <transmission name="trans_top_fore">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_top_fore">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_top_fore">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+</robot>  
+
+<!--
+  This XML code defines a robot arm which has three links that are
+0.1 meters deep and wide. The base_link is 2 meters tall, and the mid_link and top_link are both 1 meter tall. The origin of the base_link is at (0, 0, 1).
+The reference frame of the box is 1 meter in the z direction above the reference frame of the link. This base_link is identified as the URDF root link and is the beginning of the kinematic chain for the
+arm. The collision elements of each match their visual elements. Each inertial element indicates that each link weighs 1 kilogram and has the same basic inertia matrix values.
+
+ The dynamics damping coefficient is set to 0.7 Nms/rad. This damping
+is the amount of opposing force to any joint velocity, used to slow down the moving arms to a rest position. The <limit> tag is required for revolute joints. The limit effort is set to 1000.0 N-m for the maximum joint effort that can be commanded. The joint velocity is limited to a magnitude of 0.5 rad/s, with a damping effort applied when the joint is commanded beyond this limit. The upper and lower limits of the joint are set to pi radians and -pi radians, respectively.
+-->
